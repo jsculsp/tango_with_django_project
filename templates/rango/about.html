@@ -1,14 +1,11 @@
-<!DOCTYPE html>
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
 
-{% load static %}
+{% block title_block %}
+    about
+{% endblock %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>About</title>
-    <link rel="stylesheet" href="/static/css/main.css">
-</head>
-<body>
+{% block body_block %}
     <h1>Rango says...</h1>
     <div>
         This tutorial has been put together by
@@ -19,5 +16,4 @@
         alt="Picture of Rango" />
         <img src="{{ MEDIA_URL }}cat.jpg" alt="a cute cat">
     </div>
-</body>
-</html>
+{% endblock %}
