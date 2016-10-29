@@ -4,7 +4,8 @@ from rango.models import Page, Category
 
 class CategoryForm(forms.ModelForm):
     name = forms.CharField(max_length=128,
-                           help_text='Please enter the category name.')
+                           help_text='Please enter the category name.',
+                           widget=forms.TextInput(attrs={'placeholder': '请在此处输入'}))
 
     # views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
     # likes = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
@@ -19,10 +20,14 @@ class CategoryForm(forms.ModelForm):
 
 class PageForm(forms.ModelForm):
     title = forms.CharField(max_length=128,
-                            help_text='Please enter the title of the page.')
+                            help_text='Please enter the title of the page.',
+                            widget=forms.TextInput(attrs={'placeholder': '请在此处输入 title'}),
+                            )
     url = forms.CharField(max_length=200,
-                          help_text='Please enter the URL of the page.')
-    views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
+                          help_text='Please enter the URL of the page.',
+                          widget=forms.TextInput(attrs={'placeholder': '请在此处输入 url'}),
+                          )
+    # views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
 
     def clean(self):
         cleaned_data = self.cleaned_data
@@ -35,4 +40,4 @@ class PageForm(forms.ModelForm):
 
     class Meta:
         model = Page
-        exclude = ('category',)
+        exclude = ('category', 'views')

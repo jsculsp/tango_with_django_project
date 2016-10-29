@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
+from django.core.urlresolvers import reverse
 from rango.models import Category
 from rango.models import Page
 from rango.forms import CategoryForm
+from rango.forms import PageForm
 
 from utils import log
 
@@ -71,7 +73,7 @@ def add_category(request):
             # We could give a confirmation message
             # But since the most recent category added is on the index page
             # Then we can direct the user back to the index page.
-            return redirect('/')
+            return redirect(reverse('index'))
         else:
             # The supplied form contained errors
             # Just print them to the terminal
@@ -80,3 +82,24 @@ def add_category(request):
     # Render the form with error messages (if any)
     return render(request, 'rango/add_category.html', {'form': form})
 
+
+def add_page(request, category_name_slug):
+    try:
+        category = Category.objects.get(slug=category_name_slug)
+    except Category.DoesNotExist:
+        category = None
+
+    form = PageForm()
+    if request.method == 'POST':
+        form = PageForm(request.POST)
+        if form.is_valid():
+            if category:
+                page = form.save(commit=False)
+                page.category = category
+                page.save()
+            return redirect(reverse('show_category', args=[category_name_slug]))
+        else:
+            log(form.errors)
+
+    context_dict = {'form':form, 'category':category}
+    return render(request, 'rango/add_page.html', context_dict)
