@@ -1,3 +1,4 @@
+from unidecode import unidecode
 from django.db import models
 from django.template.defaultfilters import slugify
 
@@ -9,7 +10,7 @@ class Category(models.Model):
     slug = models.SlugField(unique=True)
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
+        self.slug = slugify(unidecode(self.name))
         super(Category, self).save(*args, **kwargs)
 
     class Meta:
