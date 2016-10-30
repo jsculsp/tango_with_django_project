@@ -8,6 +8,8 @@
     {% else %}
         hey there partner!
     {% endif %}
+    <br>
+    <p>You have visited the website for <span>{{ request.COOKIES.visits }}</span> times!</p>
     <h2>Most Liked Categories</h2>
     <div>
     {% if categories %}
