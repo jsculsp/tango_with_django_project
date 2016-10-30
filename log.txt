@@ -1,21 +1,10 @@
-2016/10/29 17:14:19 嘻嘻哈哈嘻嘻哈哈！ xi-xi-ha-ha-xi-xi-ha-ha
-2016/10/29 20:27:08 pxcvsadf pxcvsadf
-2016/10/29 20:27:43 zvZxcZXc zvzxczxc
-2016/10/29 20:28:22 asdfasdfasdfq洒洒的 asdfasdfasdfqsa-sa-de
-2016/10/29 21:37:33 <ul class="errorlist"><li>url<ul class="errorlist"><li>Enter a valid URL.</li></ul></li></ul>
-2016/10/29 21:37:38 <ul class="errorlist"><li>url<ul class="errorlist"><li>Enter a valid URL.</li></ul></li></ul>
-2016/10/29 21:37:39 <ul class="errorlist"><li>url<ul class="errorlist"><li>Enter a valid URL.</li></ul></li></ul>
-2016/10/29 21:37:40 <ul class="errorlist"><li>url<ul class="errorlist"><li>Enter a valid URL.</li></ul></li></ul>
-2016/10/29 21:37:43 <ul class="errorlist"><li>url<ul class="errorlist"><li>Enter a valid URL.</li></ul></li></ul>
-2016/10/29 21:37:44 <ul class="errorlist"><li>url<ul class="errorlist"><li>Enter a valid URL.</li></ul></li></ul>
-2016/10/29 21:38:48 <ul class="errorlist"><li>url<ul class="errorlist"><li>Enter a valid URL.</li></ul></li></ul>
-2016/10/29 21:42:28 <ul class="errorlist"><li>url<ul class="errorlist"><li>Enter a valid URL.</li></ul></li></ul>
-2016/10/29 21:42:29 <ul class="errorlist"><li>url<ul class="errorlist"><li>Enter a valid URL.</li></ul></li></ul>
-2016/10/29 21:42:29 <ul class="errorlist"><li>url<ul class="errorlist"><li>Enter a valid URL.</li></ul></li></ul>
-2016/10/29 21:42:30 <ul class="errorlist"><li>url<ul class="errorlist"><li>Enter a valid URL.</li></ul></li></ul>
-2016/10/29 21:42:31 <ul class="errorlist"><li>url<ul class="errorlist"><li>Enter a valid URL.</li></ul></li></ul>
-2016/10/29 21:42:50 <ul class="errorlist"><li>url<ul class="errorlist"><li>Enter a valid URL.</li></ul></li></ul>
-2016/10/29 21:42:51 <ul class="errorlist"><li>url<ul class="errorlist"><li>Enter a valid URL.</li></ul></li></ul>
-2016/10/29 21:43:17 <ul class="errorlist"><li>url<ul class="errorlist"><li>Enter a valid URL.</li></ul></li></ul>
-2016/10/29 21:43:19 <ul class="errorlist"><li>url<ul class="errorlist"><li>Enter a valid URL.</li></ul></li></ul>
-2016/10/30 00:29:37 瓜瓜 gua-gua
+2016/10/30 16:57:58 request.FILES <MultiValueDict: {}>
+2016/10/30 17:00:05 request.POST <QueryDict: {'csrfmiddlewaretoken': ['zHhzfvNmppwmybGQcaxAnXFkHWSzKzRiO5rGBlDPHXCMtcUQ1hLeQtpJDnyiKqtn'], 'username': ['亲爱的'], 'website': [''], 'picture': ['huati1.png'], 'submit': ['Register'], 'email': ['jsculsp@126.com'], 'password': ['wwg1984']}>
+2016/10/30 17:04:22 request.POST <QueryDict: {'csrfmiddlewaretoken': ['cvJ7Ln47MtILQlhq30ZuLMgiw9JDTFyorTTe7dUA41ObLmvqS7d8ei0HsApmTwat'], 'website': [''], 'email': ['jsculsp@126.com'], 'submit': ['Register'], 'picture': ['head6.png'], 'password': ['wwg1984'], 'username': ['蜻蜓']}>
+2016/10/30 17:04:22 request.FILES <MultiValueDict: {}>
+2016/10/30 20:23:29 <ul class="errorlist"><li>username<ul class="errorlist"><li>A user with that username already exists.</li></ul></li></ul> 
+2016/10/30 21:06:23 Invalid login deails: jsculsp12, wwg1984123
+2016/10/30 21:07:59 Invalid login deails: jsculsp12, wwg1984123
+2016/10/30 21:08:14 Invalid login deails: jsculsp12, wwg1984123
+2016/10/30 21:12:56 Invalid login deails: jsculsp12, wwg1984123
+2016/10/30 21:13:14 Invalid login deails: jsculsp12, wwg1984123
