@@ -10,3 +10,5 @@
 2016/10/30 21:13:14 Invalid login deails: jsculsp12, wwg1984123
 2016/10/30 23:05:21 TEST COOKIE WORKED!
 2016/10/31 00:53:00 Invalid login deails: jsculsp12, wwg1984123
+2016/11/09 20:30:22 <ul class="errorlist"><li>username<ul class="errorlist"><li>A user with that username already exists.</li></ul></li></ul> 
+2016/11/09 20:30:50 <ul class="errorlist"><li>username<ul class="errorlist"><li>A user with that username already exists.</li></ul></li></ul> 
