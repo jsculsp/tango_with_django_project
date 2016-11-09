@@ -12,7 +12,14 @@ from datetime import datetime
 from utils import log
 
 
-def visitor_cookie_handler(request, response):
+def get_server_side_cookie(request, cookie, default_val=None):
+    val = request.session.get(cookie)
+    if not val:
+        val = default_val
+    return val
+
+
+def visitor_cookie_handler(request):
     visits = int(request.COOKIES.get('visits', 1))
     last_visit_cookie = request.COOKIES.get('last_visit', str(datetime.now()))
     # last_visit_cookie[:-7] 切片操作用来去掉小数点后面的毫秒数
@@ -20,11 +27,10 @@ def visitor_cookie_handler(request, response):
                                         '%Y-%m-%d %H:%M:%S')
     if (datetime.now() - last_visit_time).seconds > 10:
         visits += 1
-        response.set_cookie('last_visit', str(datetime.now()))
+        request.session['last_visit'] = str(datetime.now())
     else:
-        response.set_cookie('last_visit', last_visit_cookie)
-    response.set_cookie('visits', visits)
-
+        request.session['last_visit'] = last_visit_cookie
+    request.session['visits'] = visits
 
 
 def index(request):
@@ -37,9 +43,12 @@ def index(request):
     category_list = Category.objects.order_by('-likes')[:5]
     page_list = Page.objects.order_by('-views')[:5]
     context_dict = {'categories': category_list,
-                    'pages': page_list,}
-    response = render(request, 'rango/index.html', context_dict)
-    visitor_cookie_handler(request, response)
+                    'pages': page_list, }
+
+    visitor_cookie_handler(request)
+    context_dict['visits'] = request.session['visits']
+
+    response = render(request, 'rango/index.html', context=context_dict)
     return response
 
 
@@ -159,10 +168,10 @@ def register(request):
         profile_form = UserProfileForm()
 
     context_dict = {
-                      'user_form': user_form,
-                      'profile_form': profile_form,
-                      'registered': registered,
-                  }
+        'user_form': user_form,
+        'profile_form': profile_form,
+        'registered': registered,
+    }
     return render(request, 'rango/register.html', context_dict)
 
 
