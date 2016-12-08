@@ -9,15 +9,15 @@ class CategoryForm(forms.ModelForm):
                            help_text='Please enter the category name.',
                            widget=forms.TextInput(attrs={'placeholder': '请在此处输入'}))
 
-    # views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
-    # likes = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
-    # slug = forms.CharField(widget=forms.HiddenInput(), required=False)
+    views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
+    likes = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
+    slug = forms.CharField(widget=forms.HiddenInput(), required=False)
 
     # An inline class to provide additional information on the form.
     class Meta:
         # Provide an association between the ModelForm and a model
         model = Category
-        fields = ('name',)
+        fields = ('name', 'views')
 
 
 class PageForm(forms.ModelForm):
@@ -29,7 +29,7 @@ class PageForm(forms.ModelForm):
                           help_text='Please enter the URL of the page.',
                           widget=forms.TextInput(attrs={'placeholder': '请在此处输入 url'}),
                           )
-    # views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
+    views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
 
     def clean(self):
         cleaned_data = self.cleaned_data

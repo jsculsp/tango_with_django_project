@@ -179,6 +179,7 @@ def user_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
+        next = request.POST.get('next')
 
         # Use Django's machinery to attempt to see if the username/password
         # combination is valid - a User object is returned if it is.
@@ -186,7 +187,10 @@ def user_login(request):
         if user:
             if user.is_active:
                 login(request, user)
-                return redirect(reverse('index'))
+                if next:
+                    return redirect(next)
+                else:
+                    return redirect(reverse('index'))
             else:
                 return HttpResponse('Your Rango account is disabled.')
         else:
@@ -194,7 +198,8 @@ def user_login(request):
             return render(request, 'rango/404.html', {})
 
     else:
-        return render(request, 'registration/login.html', {})
+        next = request.GET.get('next')
+        return render(request, 'registration/login.html', {'next': next})
 
 
 @login_required

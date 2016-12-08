@@ -137,7 +137,7 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
-LOGIN_URL = '/registration/login/'
+LOGIN_URL = '/rango/login/'
 
 # Set it True to make session expire when browser closed.
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
