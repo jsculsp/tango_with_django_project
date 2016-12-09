@@ -8,6 +8,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
+from registration.backends.simple.views import RegistrationView
 
 from utils import log
 
@@ -20,12 +21,14 @@ def get_server_side_cookie(request, cookie, default_val=None):
 
 
 def visitor_cookie_handler(request):
-    visits = int(request.COOKIES.get('visits', 1))
-    last_visit_cookie = request.COOKIES.get('last_visit', str(datetime.now()))
+    visits = int(get_server_side_cookie(request, 'visits', 1))
+    last_visit_cookie = get_server_side_cookie(request,
+                                               'last_visit',
+                                               str(datetime.now()))
     # last_visit_cookie[:-7] 切片操作用来去掉小数点后面的毫秒数
     last_visit_time = datetime.strptime(last_visit_cookie[:-7],
                                         '%Y-%m-%d %H:%M:%S')
-    if (datetime.now() - last_visit_time).seconds > 10:
+    if (datetime.now() - last_visit_time).seconds > 5:
         visits += 1
         request.session['last_visit'] = str(datetime.now())
     else:
@@ -135,74 +138,79 @@ def add_page(request, category_name_slug):
     context_dict = {'form': form, 'category': category}
     return render(request, 'rango/add_page.html', context_dict)
 
-
-def register(request):
-    registered = False
-
-    if request.method == 'POST':
-        user_form = UserForm(data=request.POST)
-        profile_form = UserProfileForm(data=request.POST)
-
-        # If the two forms are valid...
-        if user_form.is_valid() and profile_form.is_valid():
-            user = user_form.save()
-
-            # Now we hash the password with the set_password method.
-            # Once hashed, we can update the user object.
-            user.set_password(user.password)
-            user.save()
-
-            profile = profile_form.save(commit=False)
-            profile.user = user
-
-            if 'picture' in request.FILES:
-                profile.picture = request.FILES['picture']
-
-            profile.save()
-
-            registered = True
-        else:
-            log(user_form.errors, profile_form.errors)
-    else:
-        user_form = UserForm()
-        profile_form = UserProfileForm()
-
-    context_dict = {
-        'user_form': user_form,
-        'profile_form': profile_form,
-        'registered': registered,
-    }
-    return render(request, 'rango/register.html', context_dict)
+class MyRegistrationView(RegistrationView):
+    def get_success_url(self, user):
+        return reverse('index')
 
 
-def user_login(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        next = request.POST.get('next')
 
-        # Use Django's machinery to attempt to see if the username/password
-        # combination is valid - a User object is returned if it is.
-        user = authenticate(username=username, password=password)
-        if user:
-            if user.is_active:
-                login(request, user)
-                if next:
-                    return redirect(next)
-                else:
-                    return redirect(reverse('index'))
-            else:
-                return HttpResponse('Your Rango account is disabled.')
-        else:
-            log('Invalid login deails: {0}, {1}'.format(username, password))
-            return render(request, 'rango/404.html', {})
-
-    else:
-        next = request.GET.get('next')
-        return render(request, 'registration/login.html', {'next': next})
-
-
-@login_required
-def user_logout(request):
-    logout(request)
-    return redirect(reverse('index'))
+# def register(request):
+#     registered = False
+#
+#     if request.method == 'POST':
+#         user_form = UserForm(data=request.POST)
+#         profile_form = UserProfileForm(data=request.POST)
+#
+#         # If the two forms are valid...
+#         if user_form.is_valid() and profile_form.is_valid():
+#             user = user_form.save()
+#
+#             # Now we hash the password with the set_password method.
+#             # Once hashed, we can update the user object.
+#             user.set_password(user.password)
+#             user.save()
+#
+#             profile = profile_form.save(commit=False)
+#             profile.user = user
+#
+#             if 'picture' in request.FILES:
+#                 profile.picture = request.FILES['picture']
+#
+#             profile.save()
+#
+#             registered = True
+#         else:
+#             log(user_form.errors, profile_form.errors)
+#     else:
+#         user_form = UserForm()
+#         profile_form = UserProfileForm()
+#
+#     context_dict = {
+#         'user_form': user_form,
+#         'profile_form': profile_form,
+#         'registered': registered,
+#     }
+#     return render(request, 'accounts/register.html', context_dict)
+#
+#
+# def user_login(request):
+#     if request.method == 'POST':
+#         username = request.POST.get('username')
+#         password = request.POST.get('password')
+#         next = request.POST.get('next')
+#
+#         # Use Django's machinery to attempt to see if the username/password
+#         # combination is valid - a User object is returned if it is.
+#         user = authenticate(username=username, password=password)
+#         if user:
+#             if user.is_active:
+#                 login(request, user)
+#                 if next:
+#                     return redirect(next)
+#                 else:
+#                     return redirect(reverse('index'))
+#             else:
+#                 return HttpResponse('Your Rango account is disabled.')
+#         else:
+#             log('Invalid login deails: {0}, {1}'.format(username, password))
+#             return render(request, 'rango/404.html', {})
+#
+#     else:
+#         next = request.GET.get('next')
+#         return render(request, 'registration/login.html', {'next': next})
+#
+#
+# @login_required
+# def user_logout(request):
+#     logout(request)
+#     return redirect(reverse('index'))

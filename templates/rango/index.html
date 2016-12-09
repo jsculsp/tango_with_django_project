@@ -9,7 +9,7 @@
         hey there partner!
     {% endif %}
     <br>
-    <p>You have visited the website for <span>{{ request.COOKIES.visits }}</span> times!</p>
+    <p>You have visited the website for <span>{{ visits }}</span> times!</p>
     <h2>Most Liked Categories</h2>
     <div>
     {% if categories %}
@@ -43,10 +43,10 @@
     </div>
     <ul>
         {% if user.is_authenticated %}
-            <li><a href="{% url 'logout' %}">Logout</a></li>
+            <li><a href="{% url 'auth_logout' %}?next=/rango/">Logout</a></li>
         {% else %}
-            <li><a href="{% url 'login' %}">Sign In</a></li>
-            <li><a href="{% url 'register' %}">Sign Up</a></li>
+            <li><a href="{% url 'auth_login' %}">Sign In</a></li>
+            <li><a href="{% url 'registration_register' %}">Sign Up</a></li>
         {% endif %}
     </ul>
 {% endblock %}
