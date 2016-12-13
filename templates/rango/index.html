@@ -1,8 +1,10 @@
 {% extends 'rango/base_bootstrap.html' %}
 {% load staticfiles %}
+{% load rango_template_tags %}
 
 {% block body_block %}
     <h1>Rango says...</h1>
+    {% current_time '%Y..%m..%d %H..%M..%S' %}
     {% if user.is_authenticated %}
         hello {{ user.username }}!
     {% else %}
