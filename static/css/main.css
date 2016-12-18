@@ -1,15 +1,8 @@
 body {
-    font-size: 27px;
     font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
 }
-h1 {
-    font-size: 50px;
-}
-h2 {
-    font-size: 33px;
-}
 a {
-    text-decoration: none;
+        text-decoration: none;
 }
 a:visited {
     color: red;
@@ -19,8 +12,14 @@ a:link {
 }
 a:hover {
     color: green;
+    text-decoration: none;
 }
 span {
     color: orange;
     font-size: 20px;
+}
+
+.list-group {
+    padding-left: 38px;
+    margin-bottom: 0;
 }
