@@ -70,6 +70,9 @@
 	</ul>
             <hr>
 	<div id="cats">
+        {% block sidebar_block %}
+            {% get_category_list category %}
+        {% endblock %}
 	</div>
 
 
