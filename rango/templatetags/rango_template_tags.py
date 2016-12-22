@@ -11,7 +11,7 @@ from rango.models import Category
 register = template.Library()
 
 
-@register.inclusion_tag('rango/cats.html')
+@register.inclusion_tag('templatetags/cats.html')
 def get_category_list(cat=None):
     return {'cats': Category.objects.all(),
             'act_cat': cat}
@@ -44,3 +44,8 @@ def random_color():
     for i in range(6):
         str1 += random.choice(choices)
     return str1
+
+
+@register.inclusion_tag('templatetags/current_time_list.html', name='get_current_time_list')
+def get_current_time_list():
+    return {}
