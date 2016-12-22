@@ -4,7 +4,7 @@
 
 {% block body_block %}
     <h1>Rango says...</h1>
-    {% current_time '%Y..%m..%d %H..%M..%S' %}
+    {% current_time '<b style="color: gray;">%Y-%m-%d %H:%M:%S</b>' %}<br>
     {% if user.is_authenticated %}
         hello {{ user.username }}!
     {% else %}

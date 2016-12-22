@@ -84,8 +84,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'tango_with_django',
-        'USER': 'root',
-        'PASSWORD': 'root',
+        'USER': 'user',
+        'PASSWORD': 'AzMNTOk%',
         'HOST': 'localhost',
         'PORT': '3306',
     }
