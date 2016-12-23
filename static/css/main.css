@@ -26,3 +26,6 @@ a:hover {
 #cats {
     font-size: 1.5em;
 }
+a.nav-link {
+    padding-top: 1.425rem !important;
+}
