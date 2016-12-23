@@ -3,11 +3,7 @@
 {% load rango_template_tags %}
 
 {% block body_block %}
-    {% current_time '<span style="color: gray;">%Y-%m-%d %H:%M:%S</span>' as current_time %}
-    <h1>Rango says...</h1>
-    {% for i in 10|times %}
-        <b style="color: {% random_color %}">{{ current_time }}</b><br>
-    {% endfor %}
+    <h1>Rango says...</h1>}
     {% if user.is_authenticated %}
         hello {{ user.username }}!
     {% else %}

@@ -6,6 +6,8 @@ from django import template
 from django.utils.safestring import mark_safe
 from django.utils.html import format_html
 
+from utils import log
+
 from rango.models import Category
 
 register = template.Library()
@@ -48,4 +50,6 @@ def random_color():
 
 @register.inclusion_tag('templatetags/current_time_list.html', takes_context=True, name='get_current_time_list')
 def get_current_time_list(context):
-    return {}
+    return {
+        'user': context['user'],
+    }
