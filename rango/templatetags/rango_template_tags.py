@@ -46,6 +46,6 @@ def random_color():
     return str1
 
 
-@register.inclusion_tag('templatetags/current_time_list.html', name='get_current_time_list')
-def get_current_time_list():
+@register.inclusion_tag('templatetags/current_time_list.html', takes_context=True, name='get_current_time_list')
+def get_current_time_list(context):
     return {}
