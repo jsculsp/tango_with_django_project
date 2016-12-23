@@ -1,5 +1,6 @@
 body {
     font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    font-size: 18px;
 }
 a {
         text-decoration: none;
@@ -28,4 +29,8 @@ a:hover {
 }
 a.nav-link {
     padding-top: 1.425rem !important;
+}
+.visits {
+    color: lightseagreen;
+    font-size: 1.5em;
 }

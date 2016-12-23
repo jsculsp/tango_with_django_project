@@ -3,14 +3,14 @@
 {% load rango_template_tags %}
 
 {% block body_block %}
-    <h1>Rango says...</h1>}
+    <h1>Rango says...</h1>
     {% if user.is_authenticated %}
         hello {{ user.username }}!
     {% else %}
         hey there partner!
     {% endif %}
     <br>
-    <p>You have visited the website for <span>{{ visits }}</span> times!</p>
+    <p>You have visited the website for <span class="visits">{{ visits }}</span> times!</p>
     <h2>Most Liked Categories</h2>
     <div>
     {% if categories %}
