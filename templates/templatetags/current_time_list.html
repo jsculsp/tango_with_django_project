@@ -1,11 +1,13 @@
 {% load rango_template_tags %}
 
 {% current_time '%Y-%m-%d %H:%M:%S' as current_time %}
+{% customed_current_time '%Y-%m-%d %I:%M %p' as customed_current_time %}
 
 <div id="cats">
     <ul>
         {% for i in 5|times %}
             <li><b style="color: {% random_color %} !important">{{ current_time }}</b><br></li>
+            <li><b style="color: {% random_color %} !important">{{ customed_current_time }}</b><br></li>
         {% endfor %}
     </ul>
 </div>

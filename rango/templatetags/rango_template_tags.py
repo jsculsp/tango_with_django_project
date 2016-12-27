@@ -1,12 +1,10 @@
 from datetime import datetime
 import string
 import random
+import re
 
 from django import template
 from django.utils.safestring import mark_safe
-from django.utils.html import format_html
-
-from utils import log
 
 from rango.models import Category
 
@@ -71,6 +69,40 @@ def do_format_time(parse, token):
     return FormatTimeNode(date_to_be_formatted, format_string[1: -1])
 
 
+@register.tag('customed_current_time')
+def do_current_time(parser, token):
+    # This version users a  regular expression to parse tag contents.
+    try:
+        tag_name, arg = token.contents.split(None, 1)
+    except ValueError:
+        raise template.TemplateSyntaxError(
+            '%r tag requires arguments' % token.contents.split()[0]
+        )
+    m = re.search(r'(.*?) as (\w+)', arg)
+    if not m:
+        raise template.TemplateSyntaxError('%r tag has invalid arguments' % tag_name)
+    format_string, var_name = m.groups()
+    if not (format_string[0] == format_string[-1] and format_string[0] in ("'", '"')):
+        raise template.TemplateSyntaxError(
+            '%r tag\'s argument should be in quotes' % tag_name
+        )
+    return CurrentTimeNode(format_string[1:-1], var_name)
+
+
+@register.tag('comment')
+def do_comment(parser, token):
+    nodelist = parser.parse(('endcomment', ))
+    parser.delete_first_token()
+    return CommentNode()
+
+
+@register.tag('upper')
+def do_upper(parser, token):
+    nodelist = parser.parse(('endupper', ))
+    parser.delete_first_token()
+    return UpperNode(nodelist)
+
+
 class FormatTimeNode(template.Node):
     def __init__(self, date_to_be_formatted, format_string):
         self.date_to_be_formatted = template.Variable(date_to_be_formatted)
@@ -82,3 +114,27 @@ class FormatTimeNode(template.Node):
             return actual_date.strftime(self.format_string)
         except template.VariableDoesNotExist:
             return ''
+
+
+class CurrentTimeNode(template.Node):
+    def __init__(self, format_string, var_name):
+        self.format_string = format_string
+        self.var_name = var_name
+
+    def render(self, context):
+        context[self.var_name] = datetime.now().strftime(self.format_string)
+        return ''
+
+
+class CommentNode(template.Node):
+    def render(self, context):
+        return ''
+
+
+class UpperNode(template.Node):
+    def __init__(self, nodelist):
+        self.nodelist = nodelist
+
+    def render(self, context):
+        output = self.nodelist.render(context)
+        return output.upper()

@@ -9,8 +9,10 @@
 {% block body_block %}
     <h1>Rango says...</h1>
     <div>
-        This tutorial has been put together by
-        <strong>{{ boldmessage }}</strong><br />
+        {% upper %}
+            This tutorial has been put together by
+            <strong>{{ boldmessage }}</strong><br />
+        {% endupper %}
     </div>
     <br>
     <div>
