@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'rango',
     'registration',
     'django_jinja',
+    'django_jinja.contrib._easy_thumbnails',
+    'easy_thumbnails',
 ]
 
 MIDDLEWARE = [

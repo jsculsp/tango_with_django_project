@@ -44,6 +44,7 @@ def random_color():
     return str1
 
 
+@library.global_function
 @library.render_with('jinja_test/current_time_list.html')
 @jinja2.contextfunction
 def get_current_time_list(context, *args, **kwargs):
