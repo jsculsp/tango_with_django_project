@@ -1,3 +1,5 @@
+{% set time_now=current_time('%Y-%m-%d %I:%M:%S %p') %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +9,17 @@
 <body>
     This is the page for test purpose.
     <br>
-    <a href="{{ url('index') }}">url test</a>
+    {% for i in 5|times %}
+           <a href="{{ url('index') }}" style="color: {{ random_color() }}">url test</a>
+           <br>
+    {% endfor %}
     <br>
     <a href="{{ static('images/rango.jpg') }}">static test</a>
+    <br>
+    {% for i in 5|times %}
+        <p style="color: {{ random_color() }}; font-size: 20px;">{{ time_now }}</p>
+    {% endfor %}
+    {{ user.username|replace('l', 'Q') }}
+{#    {{ get_current_time_list() }}#}
 </body>
 </html>
