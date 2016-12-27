@@ -1,25 +1,24 @@
-{% set time_now=current_time('%Y-%m-%d %I:%M:%S %p') %}
+{% extends 'jinja_test/base_bootstrap.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Test</title>
-</head>
-<body>
-    This is the page for test purpose.
-    <br>
-    {% for i in 5|times %}
-           <a href="{{ url('index') }}" style="color: {{ random_color() }}">url test</a>
-           <br>
-    {% endfor %}
-    <br>
-    <a href="{{ static('images/rango.jpg') }}">static test</a>
-    <br>
-    {% for i in 5|times %}
-        <p style="color: {{ random_color() }}; font-size: 20px;">{{ time_now }}</p>
-    {% endfor %}
-    {{ user.username|replace('l', 'Q') }}
-    {{ get_current_time_list() }}
-</body>
-</html>
+{% block title %}
+    Test
+{% endblock %}
+
+{% block body_block %}
+    {% set time_now=current_time('%Y-%m-%d %I:%M:%S %p') %}
+
+        This is the page for test purpose.
+        <br>
+        {% for i in 5|times %}
+               <a href="{{ url('index') }}" style="color: {{ random_color() }}">url test</a>
+               <br>
+        {% endfor %}
+        <br>
+        <a href="{{ static('images/rango.jpg') }}">static test</a>
+        <br>
+        {% for i in 5|times %}
+            <p style="color: {{ random_color() }}; font-size: 20px;">{{ time_now }}</p>
+        {% endfor %}
+        {{ user.username|replace('l', 'Q') }}
+        {{ get_current_time_list() }}
+{% endblock %}
