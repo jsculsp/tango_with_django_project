@@ -81,7 +81,6 @@ TEMPLATES = [
                 'django_jinja.builtins.extensions.UrlsExtension',
                 'django_jinja.builtins.extensions.StaticFilesExtension',
                 'django_jinja.builtins.extensions.DjangoFiltersExtension',
-                'pipeline.jinja2.ext.PipelineExtension',
             ],
             'context_processors': [
                 'django.template.context_processors.debug',
