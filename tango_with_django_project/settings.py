@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rango',
     'registration',
+    'django_jinja',
 ]
 
 MIDDLEWARE = [
@@ -59,6 +60,42 @@ ROOT_URLCONF = 'tango_with_django_project.urls'
 
 TEMPLATES = [
     {
+        'BACKEND': 'django_jinja.backend.Jinja2',
+        'DIRS': [TEMPLATE_DIR,],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'match_extension': '.html',
+            'match_regex': r'^(?!(admin|rango|registration|templatetags)/).*',  # This is additive to match_extension
+            'app_dirname': 'templates',
+            'undefined': None,
+            'newstyle_gettext': True,
+            'extensions': [
+                'jinja2.ext.do',
+                'jinja2.ext.loopcontrols',
+                'jinja2.ext.with_',
+                'jinja2.ext.i18n',
+                'jinja2.ext.autoescape',
+                'django_jinja.builtins.extensions.CsrfExtension',
+                'django_jinja.builtins.extensions.CacheExtension',
+                'django_jinja.builtins.extensions.TimezoneExtension',
+                'django_jinja.builtins.extensions.UrlsExtension',
+                'django_jinja.builtins.extensions.StaticFilesExtension',
+                'django_jinja.builtins.extensions.DjangoFiltersExtension',
+                'pipeline.jinja2.ext.PipelineExtension',
+            ],
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
+            ],
+            'autoescape': True,
+            'auto_reload': DEBUG,
+            'translation_engine': 'django.utils.translation',
+        }
+    },
+    {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [TEMPLATE_DIR,],
         'APP_DIRS': True,
@@ -71,7 +108,7 @@ TEMPLATES = [
                 'django.template.context_processors.media',
             ],
         },
-    },
+    }
 ]
 
 WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
