@@ -46,4 +46,14 @@
 
     {{ br_num(3) }}
 
+    capitalize filter test: {{ 'abcde'|capitalize }}
+
+    {{ br_num(3) }}
+
+    count filter test: {{ 'asdfasfdasdf'|count }}
+
+    {{ br_num(3) }}
+
+    default filter test: {{ whatever|d('默认值') }}
+
 {% endblock %}

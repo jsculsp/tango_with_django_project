@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+from jinja2.runtime import Undefined
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -69,7 +70,7 @@ TEMPLATES = [
             'match_extension': '.html',
             'match_regex': r'^(?!(admin|rango|registration|templatetags)/).*',  # This is additive to match_extension
             'app_dirname': 'templates',
-            'undefined': None,
+            'undefined': Undefined,
             'newstyle_gettext': True,
             'extensions': [
                 'jinja2.ext.do',
