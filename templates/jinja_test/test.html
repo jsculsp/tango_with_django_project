@@ -56,4 +56,84 @@
 
     default filter test: {{ whatever|d('默认值') }}
 
+    {{ br_num(3) }}
+
+    dictsort filter test1:   <br>
+    {% for item in dct|dictsort %}
+        {{ item[0] }} = {{ item[1] }}   <br>
+    {% endfor %}
+
+    {{ br_num(2) }}
+
+    dictsort filter test2:   <br>
+    {% for item in dct|dictsort(by='value') %}
+        {{ item[0] }} = {{ item[1] }}   <br>
+    {% endfor %}
+
+    {{ br_num(2) }}
+
+    {{ '<b>I want to escape!</b>'|safe }}   <br>
+    {{ '<b>OK!</b>'|e|safe }}
+
+    {{ br_num(3) }}
+
+    {{ 102400|filesizeformat }}
+
+    {{ br_num(3) }}
+
+    {{ lst|first }}
+
+    {{ br_num(3) }}
+
+    {{ '23333'|float }}
+
+    {{ br_num(3) }}
+
+    {{ '%s %s'|format('你好！', '你也好！') }}
+
+    {{ br_num(3) }}
+
+    <ul>
+    {% for group in pages|groupby('category_id') %}
+        <li>
+            {{ group.grouper }}
+                <ul>
+                {% for i in group.list %}
+                    <li><a href="{{ i.url }}">{{ i.title }}</a></li>
+                {% endfor %}
+                </ul>
+        </li>
+    {% endfor %}
+    </ul>
+
+    {{ br_num(2) }}
+
+    {{ '23333'|int }}
+
+    {{ br_num(3) }}
+
+    {{ [1, 2, 3]|join('|') }} <br>
+    {{ pages|join(' | ') }}
+
+    {{ br_num(3) }}
+
+    {{ lst|last }}
+
+    {{ br_num(3) }}
+
+    {{ 'letter'|list }}
+
+    {{ br_num(3) }}
+
+    {{ 'LOWER'|lower }}
+
+    {{ br_num(3) }}
+
+    {{ ['cat', 'bird', 'dog']|map('capitalize')|join(' | ') }} <br>
+    {{ pages|map(attribute='views')|join(',') }}
+
+    {{ br_num(3) }}
+
+
+
 {% endblock %}

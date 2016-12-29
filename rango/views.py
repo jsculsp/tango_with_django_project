@@ -1,14 +1,15 @@
+from datetime import datetime
+
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.core.urlresolvers import reverse
+from django.contrib.auth.decorators import login_required
+from registration.backends.simple.views import RegistrationView
+
 from rango.models import Category, Page
 from rango.forms import CategoryForm, PageForm
-from rango.forms import UserForm, UserProfileForm
-from django.contrib.auth import authenticate, login, logout
-from django.http import HttpResponse
-from django.contrib.auth.decorators import login_required
-from datetime import datetime
-from registration.backends.simple.views import RegistrationView
+from rango.models import Page
+
 
 from utils import log
 
@@ -145,7 +146,17 @@ class MyRegistrationView(RegistrationView):
 
 
 def test(request):
-    return render(request, 'jinja_test/test.html', context={})
+    dct = {
+        'a': 1,
+        'b': 2,
+        'e': 3,
+        'c': 5,
+        'd': 4,
+           }
+    lst = ['first', 'second', 'third', 'fourth']
+    pages = Page.objects.all()
+
+    return render(request, 'jinja_test/test.html', context={'dct': dct, 'lst': lst, 'pages': pages})
 
 
 # def register(request):
