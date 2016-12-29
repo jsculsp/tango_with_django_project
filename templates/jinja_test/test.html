@@ -5,20 +5,45 @@
 {% endblock %}
 
 {% block body_block %}
+
     {% set time_now=current_time('%Y-%m-%d %I:%M:%S %p') %}
 
-        This is the page for test purpose.
-        <br>
-        {% for i in 5|times %}
-               <a href="{{ url('index') }}" style="color: {{ random_color() }}">url test</a>
-               <br>
-        {% endfor %}
-        <br>
-        <a href="{{ static('images/rango.jpg') }}">static test</a>
-        <br>
-        {% for i in 5|times %}
-            <p style="color: {{ random_color() }}; font-size: 20px;">{{ time_now }}</p>
-        {% endfor %}
-        {{ user.username|replace('l', 'Q') }}
-        {{ get_current_time_list() }}
+    This is the page for test purpose.
+
+    {{ br_num(3) }}
+
+    {% for i in 5|times %}
+           <a href="{{ url('index') }}" style="color: {{ random_color() }}">url test</a>
+           <br>
+    {% endfor %}
+
+
+    {{ br_num(2) }}
+
+    <a href="{{ static('images/rango.jpg') }}">static test</a>
+
+    {{ br_num(3) }}
+
+    {% for i in 5|times %}
+        <p style="color: {{ random_color() }}; font-size: 20px;">{{ time_now }}</p>
+    {% endfor %}
+
+    {{ br_num(2) }}
+
+    {{ user.username|replace('l', 'Q') }}
+
+    {{ br_num(3) }}
+
+    {{ get_current_time_list() }}
+
+    {{ br_num(2) }}
+
+    filter 把负数转为正数：{{ -3|abs }}
+
+    {{ br_num(3) }}
+
+    attr filter test: {{ user|attr('username') }}
+
+    {{ br_num(3) }}
+
 {% endblock %}
