@@ -11,12 +11,14 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import sys
 from jinja2.runtime import Undefined
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
+sys.path.insert(1, STATIC_DIR)
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
 

@@ -134,6 +134,10 @@
 
     {{ br_num(3) }}
 
+    {{ '中国中国中国中国中国'|replace('中国', '美国')}}
 
+    {{ br_num(3) }}
+
+    <img src="{{ thumbnail('cat.jpg', size=(500, 375)) }}" alt="">
 
 {% endblock %}
