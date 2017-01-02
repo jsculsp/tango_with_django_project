@@ -146,4 +146,60 @@
 
     {{ 'asasd'|random() }}
 
+    {{ br_num(3) }}
+
+    {{ 'abcdefg'|reverse() }}
+
+    {{ br_num(3) }}
+
+    {{ 123.4444|round(3) }}
+
+    {{ br_num(3) }}
+
+    {{ '<b style="color: red; font-size: 38">安全</b>'|safe }}
+
+    {{ br_num(3) }}
+
+    {% for items in 'abcdefg'|slice(4, 'T') %}
+        {% for i in items %}
+            {{ i }}
+        {% endfor %}<br>
+    {% endfor %}
+
+    {{ br_num(3) }}
+
+    {% for i in pages|sort(attribute='views') %}
+        {{ i.title }} | {{ i.views }} <br>
+    {% endfor %}
+
+    {{ br_num(2) }}
+
+    {{ '<a href="www.baidu.com">baidu</a>'|striptags() }}
+
+    {{ br_num(3) }}
+
+    {{ pages|sum(attribute='views') }}
+
+    {{ br_num(3) }}
+
+    {{ 'learn python the hard way'|title }}
+
+    {{ br_num(3) }}
+
+    {{ 'http://www.zhihu.com/?page=2&timestamp=3'|urlencode() }}
+
+    {{ br_num(3) }}
+
+    {{ 'www.zhihu.com'|urlize(target='_blank') }}
+
+    {{ br_num(3) }}
+
+    {{ 333.221144|floatformat(4) }}
+
+    {{ br_num(3) }}
+
+    {{ 'askdlf<br>\njaslk<br>\njfla<br>\nskjdlfkjasl'|linenumbers(autoescape=False) }}
+
+    {{ br_num(3) }}
+
 {% endblock %}
