@@ -9,15 +9,6 @@ from rango.models import Category
 
 # Here are filters:
 
-@library.filter
-@jinja2.contextfilter
-def replace(context, value, x, y):
-    """
-    Filter with template context. Usage: {{ 'Hello'|replace('H','M') }}
-    """
-    return value.replace(x, y)
-
-
 @library.filter(name='times')
 def times(number):
     return range(number)

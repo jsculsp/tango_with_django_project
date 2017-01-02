@@ -85,7 +85,7 @@ TEMPLATES = [
                 'django_jinja.builtins.extensions.TimezoneExtension',
                 'django_jinja.builtins.extensions.UrlsExtension',
                 'django_jinja.builtins.extensions.StaticFilesExtension',
-                'django_jinja.builtins.extensions.DjangoExtraFiltersExtension',
+                'django_jinja.builtins.extensions.DjangoFiltersExtension',
             ],
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -125,8 +125,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'tango_with_django',
-        'USER': 'user',
-        'PASSWORD': 'AzMNTOk%',
+        'USER': 'root',
+        'PASSWORD': 'root',
         'HOST': 'localhost',
         'PORT': '3306',
     }
