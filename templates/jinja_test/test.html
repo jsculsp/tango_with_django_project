@@ -1,4 +1,5 @@
 {% extends 'jinja_test/base_bootstrap.html' %}
+{% import 'macros/forms.html' as forms with context %}
 
 {% block title %}
     Test
@@ -207,5 +208,23 @@
     {{ br_num(3) }}
 
     {{ 'linmu' is wonderful }}
+
+    {{ br_num(3) }}
+
+    {% for i in pages|sort(attribute='views') %}
+        {{ i['title'] }} | {{ i.views }} <br>
+    {% endfor %}
+
+    {{ br_num(3) }}
+
+    {{ 3 is divisibleby 3 }}
+
+    {{ br_num(3) }}
+
+    {{ user is defined }}
+
+    {{ br_num(3) }}
+
+    {{ forms.input('username', value='linmu', type='button') }}
 
 {% endblock %}

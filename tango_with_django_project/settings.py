@@ -69,7 +69,7 @@ TEMPLATES = [
         'DIRS': [TEMPLATE_DIR,],
         'APP_DIRS': True,
         'OPTIONS': {
-            'finalize': lambda x: x if x !='' else '没有这个变量呀！',
+            'finalize': lambda x: x if x !='asdfasdfasdf' else '没有这个变量呀！',
             'match_extension': '.html',
             'match_regex': r'^(?!(admin|rango|registration|templatetags)/).*',  # This is additive to match_extension
             'app_dirname': 'templates',
