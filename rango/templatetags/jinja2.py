@@ -57,3 +57,13 @@ def br_num(num):
     for i in range(num):
         s += '<br> \n'
     return mark_safe(s)
+
+
+# Below are tests
+
+@library.test(name='wonderful')
+def is_wonderful(val):
+    if val == 'linmu':
+        return True
+    else:
+        return False

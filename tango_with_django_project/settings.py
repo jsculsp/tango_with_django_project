@@ -69,6 +69,7 @@ TEMPLATES = [
         'DIRS': [TEMPLATE_DIR,],
         'APP_DIRS': True,
         'OPTIONS': {
+            'finalize': lambda x: x if x !='' else '没有这个变量呀！',
             'match_extension': '.html',
             'match_regex': r'^(?!(admin|rango|registration|templatetags)/).*',  # This is additive to match_extension
             'app_dirname': 'templates',
@@ -125,8 +126,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'tango_with_django',
-        'USER': 'root',
-        'PASSWORD': 'root',
+        'USER': 'user',
+        'PASSWORD': 'AzMNTOk%',
         'HOST': 'localhost',
         'PORT': '3306',
     }
