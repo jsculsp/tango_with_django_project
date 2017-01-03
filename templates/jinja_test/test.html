@@ -243,4 +243,49 @@
         a call block.
     {% endcall %}
 
+    {{ br_num(3) }}
+
+    {% set navigation %}
+        <li><a href="/">Index</a>
+        <li><a href="/downloads">Downloads</a>
+    {% endset %}
+
+    {{ navigation|safe }}
+    {{ navigation|safe }}
+    {{ navigation|safe }}
+
+    {{ br_num(3) }}
+
+    {% for i in range(5) %}
+        {{ i }}
+    {% endfor %}
+
+    {{ br_num(3) }}
+
+    {% for page in pages %}
+        {% if page.views == 16 %}{% continue %}{% endif %}
+        {{ page.views }}
+    {% endfor %}
+
+    {{ br_num(3) }}
+
+    {% with %}
+        {% set foo = 42 %}
+        {{ foo }}
+    {% endwith %}
+    {{ foo if foo else '没有' }}
+
+    {{ br_num(3) }}
+
+    {% autoescape false %}
+        {{ '<li>目录</li>' }}
+    {% endautoescape %}
+
+    {{ br_num(3) }}
+
+    {{ 'aa'|static }} ==
+    {{ static('aa') }}
+
+    {{ br_num(3) }}
+
 {% endblock %}
