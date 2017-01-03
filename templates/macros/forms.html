@@ -1,6 +1,6 @@
-{% macro input(name, value='', type='text') -%}
+{% macro input(name, value='', type='text') %}
     <input type="{{ type }}" value="{{ value|e }}" name="{{ name }}">
-{%- endmacro %}
+{% endmacro %}
 
 {%- macro textarea(name, value='', rows=10, cols=40) -%}
     <textarea name="{{ name }}" rows="{{ rows }}" cols="{{ cols
