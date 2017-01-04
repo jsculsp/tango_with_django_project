@@ -37,3 +37,7 @@ a.nav-link {
 hr {
     border-top: 1px solid rgba(0,0,0,.1);
 }
+.display-3 {
+    font-size: 4.5em !important;
+    font-weight: 300;
+}
