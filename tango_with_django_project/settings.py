@@ -52,11 +52,13 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'django_jinja.contrib._humanize',
     'django_jinja.contrib._subdomains',
+    'subdomains',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'subdomains.middleware.SubdomainURLRoutingMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
