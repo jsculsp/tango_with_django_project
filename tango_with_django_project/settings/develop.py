@@ -173,6 +173,7 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+STATIC_ROOT = "/var/www/tango_with_django_project/static/"
 STATICFILES_DIRS = [STATIC_DIR, ]
 STATIC_URL = '/static/'
 
