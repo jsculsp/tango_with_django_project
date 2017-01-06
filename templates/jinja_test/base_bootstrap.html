@@ -47,6 +47,7 @@
 			{% else %}
 				<a class="nav-item nav-link" href="{{ url('registration_register') }}">Register Here</a>
 				<a class="nav-item nav-link" href="{{ url('auth_login') }}">Login</a>
+				<a class="nav-item nav-link" href="{{ url('test') }}">Test</a>
 			{% endif %}
 
         </nav>
@@ -73,12 +74,6 @@
                 {% block sidebar_block %}
                     {{ get_category_list(category) }}
                 {% endblock %}
-            </div>
-
-            <hr>
-
-            <div>
-               {{ get_current_time_list() }}
             </div>
 
         </div>
