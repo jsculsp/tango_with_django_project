@@ -1,6 +1,6 @@
 from .develop import *
 
-DEBUG = False
+DEBUG = True
 
 STATIC_URL = 'https://static.linmu.date/static/'
 
