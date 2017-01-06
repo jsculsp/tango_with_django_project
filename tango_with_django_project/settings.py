@@ -51,8 +51,8 @@ INSTALLED_APPS = [
     'django_jinja.contrib._easy_thumbnails',
     'easy_thumbnails',
     'django_jinja.contrib._humanize',
-    'django_jinja.contrib._subdomains',
-    'subdomains',
+    # 'django_jinja.contrib._subdomains',
+    # 'subdomains',
 ]
 
 MIDDLEWARE = [
