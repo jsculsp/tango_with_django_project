@@ -33,7 +33,7 @@ SECRET_KEY = 'dm%olv4m2tv62dhwk1vazxc92^#hhk10r7--n+s=-g*a)287bj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.4.134', 'static.linmu.date', '127.0.0.1']
 
 
 # Application definition
