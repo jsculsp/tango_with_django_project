@@ -1,6 +1,6 @@
 from .develop import *
 
-DEBUG = False
+DEBUG = True
 
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
