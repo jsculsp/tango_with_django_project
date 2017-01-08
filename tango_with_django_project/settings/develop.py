@@ -122,7 +122,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'tango_with_django',
         'USER': 'root',
-        'PASSWORD': 'wwg1984',
+        'PASSWORD': 'root',
         'HOST': 'localhost',
         'PORT': '3306',
     }
