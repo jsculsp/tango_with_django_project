@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'django_jinja.contrib._humanize',
     # 'django_jinja.contrib._subdomains',
     # 'subdomains',
+    'django_redis',
+    'redis',
 ]
 
 MIDDLEWARE = [
@@ -122,11 +124,25 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'tango_with_django',
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': 'wwg1984',
         'HOST': 'localhost',
         'PORT': '3306',
     }
 }
+
+# Caches
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+REDIS_TIMEOUT = 7*24*60*60
+
 
 # Password hashing functions
 # https://docs.djangoproject.com/en/1.9/topics/auth/passwords/#how-django-stores-passwords
