@@ -14,6 +14,12 @@ import os
 import sys
 from jinja2.runtime import Undefined
 from django_jinja.builtins import DEFAULT_EXTENSIONS
+import djcelery
+
+djcelery.setup_loader()
+BROKER_URL = 'redis://127.0.0.1:6379/1'
+BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
+CELERY_IGNORE_RESULT = True
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -55,6 +61,8 @@ INSTALLED_APPS = [
     # 'subdomains',
     'django_redis',
     'redis',
+    'djcelery',
+    'kombu.transport.django',
 ]
 
 MIDDLEWARE = [
