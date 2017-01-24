@@ -2,7 +2,7 @@ alembic==0.8.8
 bleach==1.5.0
 blinker==1.4
 click==6.6
-Django==1.10.4
+Django==1.10.5
 django-bootstrap-toolkit==2.15.0
 django-jinja==2.2.2
 django-registration-redux==1.4

@@ -44,13 +44,15 @@ ALLOWED_HOSTS = ['192.168.4.134', '.linmu.date', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    # django build in apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rango',
+
+    # third part apps
     'registration',
     'django_jinja',
     'django_jinja.contrib._easy_thumbnails',
@@ -61,6 +63,10 @@ INSTALLED_APPS = [
     'django_redis',
     'redis',
     'kombu.transport.django',
+
+    # my own apps
+    'rango',
+    'aggregation_test'
 ]
 
 MIDDLEWARE = [
