@@ -1,1 +1,3 @@
-# from rango.receivers import signal_request_times, signal_category_to_save
+from rango.receivers import *
+
+default_app_config = 'rango.apps.RangoConfig'

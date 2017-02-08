@@ -65,7 +65,7 @@ INSTALLED_APPS = [
     'kombu.transport.django',
 
     # my own apps
-    'rango',
+    'rango.apps.RangoConfig',
     'aggregation_test'
 ]
 
