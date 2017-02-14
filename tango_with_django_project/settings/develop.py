@@ -121,7 +121,13 @@ LOGGING = {
         'console_handler': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
-        }
+        },
+        'mail_admins': {
+            'include_html': True,
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        },
     },
     'loggers': {
         'django': {
