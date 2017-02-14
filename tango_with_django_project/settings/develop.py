@@ -107,21 +107,25 @@ LOGGING = {
         'info_handler': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': '/var/log/django/info.log',
+            'filename': BASE_DIR + '/logs/info.log',
             'formatter': 'verbose',
-            'filters': ['require_debug_false'],
+            'filters': ['require_debug_true'],
         },
         'error_handler': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': '/var/log/django/info.log',
+            'filename': BASE_DIR + '/logs/info.log',
             'formatter': 'verbose',
-            'filters': ['require_debug_false'],
+            'filters': ['require_debug_true'],
+        },
+        'console_handler': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
         }
     },
     'loggers': {
         'django': {
-            'handlers': ['info_handler', 'error_handler'],
+            'handlers': ['info_handler', 'error_handler', 'console_handler'],
             'level': 'INFO',
             'propagate': True,
         }
