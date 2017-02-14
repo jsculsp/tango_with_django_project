@@ -83,6 +83,48 @@ MIDDLEWARE = [
 WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
 
 ## Logging ##
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters':{
+        'verbose': {
+            'format': '%(process)d - [%(levelname)s] [%(asctime)s] - [%(pathname)s:%(lineno)d] - %(message)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S',
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'handlers': {
+        'info_handler': {
+            'level': 'DEBUG',
+            'class': 'loggings.FileHandler',
+            'filename': '/var/log/django/info.log',
+            'formatter': 'verbose',
+        },
+        'error_handler': {
+            'level': 'ERROR',
+            'class': 'loggings.FileHandler',
+            'filename': '/var/log/django/info.log',
+            'formatter': 'verbose',
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['info_handler', 'error_handler'],
+            'level': 'INFO',
+            'propagate': True,
+        }
+    },
+}
 
 ## Models ##
 INSTALLED_APPS = [
