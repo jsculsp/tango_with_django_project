@@ -106,15 +106,17 @@ LOGGING = {
     'handlers': {
         'info_handler': {
             'level': 'DEBUG',
-            'class': 'loggings.FileHandler',
+            'class': 'logging.FileHandler',
             'filename': '/var/log/django/info.log',
             'formatter': 'verbose',
+            'filters': ['require_debug_false'],
         },
         'error_handler': {
             'level': 'ERROR',
-            'class': 'loggings.FileHandler',
+            'class': 'logging.FileHandler',
             'filename': '/var/log/django/info.log',
             'formatter': 'verbose',
+            'filters': ['require_debug_false'],
         }
     },
     'loggers': {
