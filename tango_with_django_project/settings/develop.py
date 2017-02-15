@@ -114,13 +114,20 @@ LOGGING = {
         'error_handler': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': BASE_DIR + '/logs/info.log',
+            'filename': BASE_DIR + '/logs/error.log',
             'formatter': 'verbose',
             'filters': ['require_debug_true'],
         },
         'console_handler': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
+        },
+        'warning_handler': {
+            'level': 'WARNING',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR + '/logs/warning.log',
+            'formatter': 'verbose',
+            'filters': ['require_debug_true'],
         },
         'mail_admins': {
             'include_html': True,
@@ -133,6 +140,11 @@ LOGGING = {
         'django': {
             'handlers': ['info_handler', 'error_handler', 'console_handler'],
             'level': 'INFO',
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['warning_handler'],
+            'level': 'WARNING',
             'propagate': True,
         }
     },
