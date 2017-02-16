@@ -104,6 +104,13 @@ LOGGING = {
         },
     },
     'handlers': {
+        'debug_handler': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR + '/logs/debug.log',
+            'formatter': 'simple',
+            'filters': ['require_debug_true'],
+        },
         'info_handler': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
@@ -146,6 +153,16 @@ LOGGING = {
             'handlers': ['warning_handler'],
             'level': 'WARNING',
             'propagate': True,
+        },
+        'django.template': {
+            'handlers': ['info_handler', 'error_handler'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'django.db.backends': {
+            'handlers': ['error_handler', 'debug_handler'],
+            'level': 'DEBUG',
+            'propagate': False
         }
     },
 }
