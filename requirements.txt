@@ -18,16 +18,6 @@ django-subdomains==2.1.0
 dominate==2.3.0
 easy-thumbnails==2.3
 execnet==1.4.1
-Flask==0.11.1
-Flask-Bootstrap==3.3.7.0
-Flask-Login==0.4.0
-Flask-Mail==0.9.1
-Flask-Migrate==2.0.0
-Flask-Moment==0.5.1
-Flask-PageDown==0.2.2
-Flask-Script==2.0.5
-Flask-SQLAlchemy==2.1
-Flask-WTF==0.13.1
 ForgeryPy==0.1
 gunicorn==19.6.0
 html5lib==0.9999999

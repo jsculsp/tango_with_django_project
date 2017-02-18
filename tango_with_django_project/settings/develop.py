@@ -36,7 +36,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'tango_with_django',
         'USER': 'root',
-        'PASSWORD': 'wwg1984',
+        'PASSWORD': 'root',
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -191,7 +191,8 @@ INSTALLED_APPS = [
 
     # my own apps
     'rango.apps.RangoConfig',
-    'aggregation_test'
+    'aggregation_test',
+    'redis_demo',
 ]
 
 ## Security ##

@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^rango/', include('rango.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^redis-demo/', include('redis_demo.urls')),
     url(r'^accounts/register', views.MyRegistrationView.as_view(), name='rigistration_register'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     ]
