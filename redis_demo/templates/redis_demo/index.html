@@ -3,8 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>redis-demo</title>
+    <style>
+        .message {
+            padding-top: 10px;
+            margin-bottom: 20px;
+        }
+        .title {
+            border-top-style: solid;
+            border-top-color: lightgray;
+            margin-bottom: 20px;
+            padding-top: 20px;
+            font-size: 30px;
+            font-family: "微软雅黑";
+        }
+        .gap {
+            margin: 20px 0 20px 0;
+        }
+    </style>
 </head>
 <body>
-    你好世界！
+    <div class="message">
+        {% if name %}
+            您的姓名是：{{ name }}
+        {% else %}
+            您还没有设置姓名。
+        {% endif %}
+    </div>
+    <div class="title">
+        更改姓名
+    </div>
+    <div>
+        <form action="{{ url('redis-demo_index') }}" method="post">
+            {% csrf_token %}
+            <label for="name">您的姓名: </label>
+            <input type="text" id="name" name="name">
+            <div class="gap">
+                <button>提交</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
