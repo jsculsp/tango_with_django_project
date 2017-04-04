@@ -1,4 +1,5 @@
 import time
+from pprint import pprint
 
 
 def log(*args, **kwargs):
@@ -8,5 +9,12 @@ def log(*args, **kwargs):
     with open('log.txt', 'a') as f:
         print('============================================', file=f)
         print(dt, *args, file=f, **kwargs)
+        print('============================================', file=f)
+
+
+def plog(obj):
+    with open('log.txt', 'a') as f:
+        print('============================================', file=f)
+        pprint(obj, stream=f)
         print('============================================', file=f)
         print('', file=f)

@@ -1,4 +1,6 @@
 import time
+from pprint import pprint
+
 
 def log(*args, **kwargs):
     f = '%Y/%m/%d %H:%M:%S'
@@ -7,5 +9,13 @@ def log(*args, **kwargs):
     with open('logs/log.txt', 'a', encoding='utf-8') as f:
         print('============================================', file=f)
         print(dt, *args, file=f, **kwargs)
+        print('============================================', file=f)
+        print('', file=f)
+
+
+def plog(obj):
+    with open('logs/log.txt', 'a') as f:
+        print('============================================', file=f)
+        pprint(obj, stream=f)
         print('============================================', file=f)
         print('', file=f)

@@ -1,4 +1,5 @@
 from datetime import datetime
+import json
 
 from django.shortcuts import render
 from django.shortcuts import redirect
@@ -11,7 +12,7 @@ from rango.forms import CategoryForm, PageForm
 from rango.models import Page
 
 
-from utils import log
+from utils import log, plog
 
 
 def get_server_side_cookie(request, cookie, default_val=None):
@@ -43,6 +44,8 @@ def index(request):
     # Retrieve the top 5 only - or all if less than 5.
     # Place the list in our context_dict dictionary
     # that will be passed to the template engine.
+
+    plog(request.META)
 
     category_list = Category.objects.order_by('-likes')[:5]
     page_list = Page.objects.order_by('-views')[:5]

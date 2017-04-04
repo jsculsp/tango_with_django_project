@@ -45,3 +45,4 @@ venv
 
 .idea/
 media/
+logs/

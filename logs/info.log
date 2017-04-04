@@ -742,3 +742,230 @@ django.template.base.VariableDoesNotExist: Failed lookup for key [name] in "<Reg
 3816 - [INFO] [2017-02-19 14:52:33] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /redis-demo/ HTTP/1.1" 200 1110
 3816 - [INFO] [2017-02-19 14:52:33] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /redis-demo/ HTTP/1.1" 200 1110
 3816 - [INFO] [2017-02-19 14:52:33] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /redis-demo/ HTTP/1.1" 200 1110
+6836 - [INFO] [2017-04-04 11:00:02] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET / HTTP/1.1" 200 6129
+6836 - [INFO] [2017-04-04 11:00:02] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /static/css/bootstrap.min.css HTTP/1.1" 200 105317
+6836 - [INFO] [2017-04-04 11:00:03] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /static/css/dashboard.css HTTP/1.1" 200 1619
+6836 - [INFO] [2017-04-04 11:00:03] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /static/css/3_3_7.bootstrap.min.css HTTP/1.1" 200 121207
+6836 - [INFO] [2017-04-04 11:00:03] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /static/css/main.css HTTP/1.1" 200 613
+6836 - [INFO] [2017-04-04 11:00:03] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /static/js/bootstrap.min.js HTTP/1.1" 200 37053
+6836 - [INFO] [2017-04-04 11:00:03] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /static/css/bootstrap_theme.min.css HTTP/1.1" 200 23416
+6836 - [INFO] [2017-04-04 11:00:03] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /static/js/jquery-3.1.1.min.js HTTP/1.1" 200 86713
+6836 - [INFO] [2017-04-04 11:00:03] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /static/js/ie10-viewport-bug-workaround.js HTTP/1.1" 200 694
+6836 - [INFO] [2017-04-04 11:00:03] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /static/js/tether.min.js HTTP/1.1" 200 23310
+6836 - [INFO] [2017-04-04 11:00:03] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /static/images/rango.jpg HTTP/1.1" 200 97522
+6836 - [INFO] [2017-04-04 11:00:03] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /static/images/favicon.ico HTTP/1.1" 200 5430
+8032 - [INFO] [2017-04-04 11:05:50] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET / HTTP/1.1" 200 6129
+8032 - [INFO] [2017-04-04 11:05:51] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /static/images/favicon.ico HTTP/1.1" 200 5430
+8032 - [INFO] [2017-04-04 11:06:49] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET / HTTP/1.1" 200 6129
+8032 - [INFO] [2017-04-04 11:06:50] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET / HTTP/1.1" 200 6129
+7796 - [INFO] [2017-04-04 11:08:22] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET / HTTP/1.1" 200 6129
+7024 - [ERROR] [2017-04-04 11:09:31] - [C:\Python34\lib\site-packages\django\core\handlers\exception.py:124] - Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\linmu\Desktop\tango_with_django\rango\views.py", line 48, in index
+    log(request.raw)
+AttributeError: 'WSGIRequest' object has no attribute 'raw'
+7024 - [ERROR] [2017-04-04 11:09:31] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET / HTTP/1.1" 500 78517
+7024 - [DEBUG] [2017-04-04 11:09:32] - [C:\Python34\lib\site-packages\django\template\base.py:929] - Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python34\lib\site-packages\django\urls\resolvers.py", line 300, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'path': 'favicon.ico', 'tried': [[<RegexURLPattern index ^$>], [<RegexURLResolver <module 'rango.urls' from 'C:\\Users\\linmu\\Desktop\\tango_with_django\\rango\\urls.py'> (None:None) ^rango/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLResolver <module 'redis_demo.urls' from 'C:\\Users\\linmu\\Desktop\\tango_with_django\\redis_demo\\urls.py'> (None:None) ^redis-demo/>], [<RegexURLPattern rigistration_register ^accounts/register>], [<RegexURLResolver <module 'registration.backends.simple.urls' from 'C:\\Python34\\lib\\site-packages\\registration\\backends\\simple\\urls.py'> (None:None) ^accounts/>], [<RegexURLPattern None ^media\/(?P<path>.*)$>], [<RegexURLPattern None ^static\/(?P<path>.*)$>]]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+TypeError: 'RegexURLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegexURLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in "<RegexURLResolver <module 'rango.urls' from 'C:\\\\Users\\\\linmu\\\\Desktop\\\\tango_with_django\\\\rango\\\\urls.py'> (None:None) ^rango/>"
+7024 - [DEBUG] [2017-04-04 11:09:32] - [C:\Python34\lib\site-packages\django\template\base.py:929] - Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python34\lib\site-packages\django\urls\resolvers.py", line 300, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'path': 'favicon.ico', 'tried': [[<RegexURLPattern index ^$>], [<RegexURLResolver <module 'rango.urls' from 'C:\\Users\\linmu\\Desktop\\tango_with_django\\rango\\urls.py'> (None:None) ^rango/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLResolver <module 'redis_demo.urls' from 'C:\\Users\\linmu\\Desktop\\tango_with_django\\redis_demo\\urls.py'> (None:None) ^redis-demo/>], [<RegexURLPattern rigistration_register ^accounts/register>], [<RegexURLResolver <module 'registration.backends.simple.urls' from 'C:\\Python34\\lib\\site-packages\\registration\\backends\\simple\\urls.py'> (None:None) ^accounts/>], [<RegexURLPattern None ^media\/(?P<path>.*)$>], [<RegexURLPattern None ^static\/(?P<path>.*)$>]]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+TypeError: 'RegexURLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegexURLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in '<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>'
+7024 - [DEBUG] [2017-04-04 11:09:32] - [C:\Python34\lib\site-packages\django\template\base.py:929] - Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python34\lib\site-packages\django\urls\resolvers.py", line 300, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'path': 'favicon.ico', 'tried': [[<RegexURLPattern index ^$>], [<RegexURLResolver <module 'rango.urls' from 'C:\\Users\\linmu\\Desktop\\tango_with_django\\rango\\urls.py'> (None:None) ^rango/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLResolver <module 'redis_demo.urls' from 'C:\\Users\\linmu\\Desktop\\tango_with_django\\redis_demo\\urls.py'> (None:None) ^redis-demo/>], [<RegexURLPattern rigistration_register ^accounts/register>], [<RegexURLResolver <module 'registration.backends.simple.urls' from 'C:\\Python34\\lib\\site-packages\\registration\\backends\\simple\\urls.py'> (None:None) ^accounts/>], [<RegexURLPattern None ^media\/(?P<path>.*)$>], [<RegexURLPattern None ^static\/(?P<path>.*)$>]]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+TypeError: 'RegexURLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegexURLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in "<RegexURLResolver <module 'redis_demo.urls' from 'C:\\\\Users\\\\linmu\\\\Desktop\\\\tango_with_django\\\\redis_demo\\\\urls.py'> (None:None) ^redis-demo/>"
+7024 - [DEBUG] [2017-04-04 11:09:32] - [C:\Python34\lib\site-packages\django\template\base.py:929] - Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python34\lib\site-packages\django\urls\resolvers.py", line 300, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'path': 'favicon.ico', 'tried': [[<RegexURLPattern index ^$>], [<RegexURLResolver <module 'rango.urls' from 'C:\\Users\\linmu\\Desktop\\tango_with_django\\rango\\urls.py'> (None:None) ^rango/>], [<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLResolver <module 'redis_demo.urls' from 'C:\\Users\\linmu\\Desktop\\tango_with_django\\redis_demo\\urls.py'> (None:None) ^redis-demo/>], [<RegexURLPattern rigistration_register ^accounts/register>], [<RegexURLResolver <module 'registration.backends.simple.urls' from 'C:\\Python34\\lib\\site-packages\\registration\\backends\\simple\\urls.py'> (None:None) ^accounts/>], [<RegexURLPattern None ^media\/(?P<path>.*)$>], [<RegexURLPattern None ^static\/(?P<path>.*)$>]]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 885, in _resolve_lookup
+    current = current[bit]
+TypeError: 'RegexURLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegexURLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 900, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in "<RegexURLResolver <module 'registration.backends.simple.urls' from 'C:\\\\Python34\\\\lib\\\\site-packages\\\\registration\\\\backends\\\\simple\\\\urls.py'> (None:None) ^accounts/>"
+7024 - [WARNING] [2017-04-04 11:09:32] - [C:\Python34\lib\site-packages\django\core\handlers\base.py:152] - Not Found: /favicon.ico
+7024 - [WARNING] [2017-04-04 11:09:32] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /favicon.ico HTTP/1.1" 404 2798
+4176 - [INFO] [2017-04-04 11:10:28] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET / HTTP/1.1" 200 6129
+4176 - [INFO] [2017-04-04 11:10:28] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /static/images/favicon.ico HTTP/1.1" 200 5430
+7992 - [INFO] [2017-04-04 11:11:34] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET / HTTP/1.1" 200 6129
+7992 - [INFO] [2017-04-04 11:11:34] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /static/images/favicon.ico HTTP/1.1" 200 5430
+7992 - [INFO] [2017-04-04 11:11:34] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET / HTTP/1.1" 200 6129
+7992 - [INFO] [2017-04-04 11:13:17] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET / HTTP/1.1" 200 6129
+7992 - [INFO] [2017-04-04 11:13:17] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /static/images/favicon.ico HTTP/1.1" 200 5430
+7992 - [INFO] [2017-04-04 11:13:39] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /accounts/login/ HTTP/1.1" 200 4330
+7992 - [INFO] [2017-04-04 11:13:39] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /static/css/signin.css HTTP/1.1" 200 798
+7992 - [INFO] [2017-04-04 11:13:41] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /accounts/register/ HTTP/1.1" 200 4559
+7992 - [INFO] [2017-04-04 11:13:44] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /accounts/login/ HTTP/1.1" 200 4330
+7992 - [INFO] [2017-04-04 11:13:54] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "POST /accounts/login/ HTTP/1.1" 200 4330
+7992 - [INFO] [2017-04-04 11:13:57] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /accounts/register/ HTTP/1.1" 200 4559
+7992 - [INFO] [2017-04-04 11:14:17] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "POST /accounts/register/ HTTP/1.1" 200 4676
+7992 - [INFO] [2017-04-04 11:14:28] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "POST /accounts/register/ HTTP/1.1" 302 0
+7992 - [INFO] [2017-04-04 11:14:28] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /rango/ HTTP/1.1" 200 6160
+7992 - [INFO] [2017-04-04 11:14:33] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /rango/ HTTP/1.1" 200 6160
+7992 - [INFO] [2017-04-04 11:14:33] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /rango/about/ HTTP/1.1" 200 3908
+7992 - [INFO] [2017-04-04 11:14:33] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /static/images/gua.png HTTP/1.1" 200 11844
+7992 - [INFO] [2017-04-04 11:14:33] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /media/cat.jpg HTTP/1.1" 200 22744
+7992 - [INFO] [2017-04-04 11:14:37] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /rango/test/ HTTP/1.1" 200 12388
+7992 - [INFO] [2017-04-04 11:14:37] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /media/cat.jpg.80x60_q85.jpg HTTP/1.1" 200 1251
+7992 - [INFO] [2017-04-04 11:14:41] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /rango/ HTTP/1.1" 200 6160
+2440 - [INFO] [2017-04-04 11:15:58] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /rango/ HTTP/1.1" 200 6161
+2440 - [INFO] [2017-04-04 11:15:58] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /static/images/favicon.ico HTTP/1.1" 200 5430
+7864 - [ERROR] [2017-04-04 11:17:01] - [C:\Python34\lib\site-packages\django\core\handlers\exception.py:124] - Internal Server Error: /rango/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\linmu\Desktop\tango_with_django\rango\views.py", line 48, in index
+    log(json.dumps(request.META))
+  File "C:\Python34\lib\json\__init__.py", line 230, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python34\lib\json\encoder.py", line 192, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python34\lib\json\encoder.py", line 250, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python34\lib\json\encoder.py", line 173, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <class 'wsgiref.util.FileWrapper'> is not JSON serializable
+7864 - [ERROR] [2017-04-04 11:17:01] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /rango/ HTTP/1.1" 500 117247
+6768 - [INFO] [2017-04-04 11:17:32] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /rango/ HTTP/1.1" 200 6161
+8800 - [INFO] [2017-04-04 11:25:39] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /rango/ HTTP/1.1" 200 6161
+8800 - [INFO] [2017-04-04 11:25:39] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /static/images/favicon.ico HTTP/1.1" 200 5430

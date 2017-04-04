@@ -46,3 +46,35 @@ _pickle.UnpicklingError
 8364 - [ERROR] [2017-02-19 14:48:42] - [C:\Python34\lib\site-packages\django\core\handlers\exception.py:73] - Invalid HTTP_HOST header: '192.168.0.101:3000'. You may need to add '192.168.0.101' to ALLOWED_HOSTS.
 8364 - [ERROR] [2017-02-19 14:48:43] - [C:\Python34\lib\site-packages\django\core\handlers\exception.py:73] - Invalid HTTP_HOST header: '192.168.0.101:3000'. You may need to add '192.168.0.101' to ALLOWED_HOSTS.
 8364 - [ERROR] [2017-02-19 14:48:43] - [C:\Python34\lib\site-packages\django\core\handlers\exception.py:73] - Invalid HTTP_HOST header: '192.168.0.101:3000'. You may need to add '192.168.0.101' to ALLOWED_HOSTS.
+7024 - [ERROR] [2017-04-04 11:09:31] - [C:\Python34\lib\site-packages\django\core\handlers\exception.py:124] - Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\linmu\Desktop\tango_with_django\rango\views.py", line 48, in index
+    log(request.raw)
+AttributeError: 'WSGIRequest' object has no attribute 'raw'
+7024 - [ERROR] [2017-04-04 11:09:31] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET / HTTP/1.1" 500 78517
+7864 - [ERROR] [2017-04-04 11:17:01] - [C:\Python34\lib\site-packages\django\core\handlers\exception.py:124] - Internal Server Error: /rango/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\linmu\Desktop\tango_with_django\rango\views.py", line 48, in index
+    log(json.dumps(request.META))
+  File "C:\Python34\lib\json\__init__.py", line 230, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python34\lib\json\encoder.py", line 192, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python34\lib\json\encoder.py", line 250, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python34\lib\json\encoder.py", line 173, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <class 'wsgiref.util.FileWrapper'> is not JSON serializable
+7864 - [ERROR] [2017-04-04 11:17:01] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /rango/ HTTP/1.1" 500 117247
