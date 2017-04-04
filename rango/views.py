@@ -161,6 +161,13 @@ def test(request):
     return render(request, 'jinja_test/test.html', context={'dct': dct, 'lst': lst, 'pages': pages})
 
 
+def upload(request):
+    file = request.FILES['file']
+    with open('temp.jpg', 'wb') as f:
+        f.write(file.read())
+    return redirect(reverse(index))
+
+
 # def register(request):
 #     registered = False
 #

@@ -18,4 +18,5 @@ urlpatterns = [
 
 urlpatterns += [
     url(r'^test/$', views.test, name='test'),
+    url(r'^upload$', views.upload, name='upload')
 ]

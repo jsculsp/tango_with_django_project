@@ -308,4 +308,10 @@
 
     {{ br_num(3) }}
 
+    <form enctype="multipart/form-data" method="post" action="{{ url('upload') }}">
+        <input type="hidden" name="csrfmiddlewaretoken" value={{ csrf_token }}>
+        <input type="file" name="file">
+        <input type="submit" value="submit">
+    </form>
+
 {% endblock %}
