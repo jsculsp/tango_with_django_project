@@ -1,0 +1,189 @@
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT @@sql_mode; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.000) SHOW FULL TABLES; args=None
+DEBUG (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+DEBUG (0.000) SHOW FULL TABLES; args=None
+DEBUG (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+DEBUG (0.000) SHOW FULL TABLES; args=None
+DEBUG (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'admin' AND `django_content_type`.`model` = 'logentry'); args=('admin', 'logentry')
+DEBUG (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (1) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(1,)
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'admin'; args=('admin',)
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'auth' AND `django_content_type`.`model` = 'user'); args=('auth', 'user')
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'auth' AND `django_content_type`.`model` = 'permission'); args=('auth', 'permission')
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'auth' AND `django_content_type`.`model` = 'group'); args=('auth', 'group')
+DEBUG (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (2, 3, 4) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(2, 3, 4)
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'auth'; args=('auth',)
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'contenttypes' AND `django_content_type`.`model` = 'contenttype'); args=('contenttypes', 'contenttype')
+DEBUG (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (5) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(5,)
+DEBUG (0.016) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'contenttypes'; args=('contenttypes',)
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'sessions' AND `django_content_type`.`model` = 'session'); args=('sessions', 'session')
+DEBUG (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (6) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(6,)
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'sessions'; args=('sessions',)
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'registration' AND `django_content_type`.`model` = 'registrationprofile'); args=('registration', 'registrationprofile')
+DEBUG (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (10) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(10,)
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'registration'; args=('registration',)
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'easy_thumbnails' AND `django_content_type`.`model` = 'thumbnaildimensions'); args=('easy_thumbnails', 'thumbnaildimensions')
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'easy_thumbnails' AND `django_content_type`.`model` = 'source'); args=('easy_thumbnails', 'source')
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'easy_thumbnails' AND `django_content_type`.`model` = 'thumbnail'); args=('easy_thumbnails', 'thumbnail')
+DEBUG (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (11, 12, 13) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(11, 12, 13)
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'easy_thumbnails'; args=('easy_thumbnails',)
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'kombu_transport_django' AND `django_content_type`.`model` = 'queue'); args=('kombu_transport_django', 'queue')
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'kombu_transport_django' AND `django_content_type`.`model` = 'message'); args=('kombu_transport_django', 'message')
+DEBUG (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (14, 15) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(14, 15)
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'kombu_transport_django'; args=('kombu_transport_django',)
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'rango' AND `django_content_type`.`model` = 'category'); args=('rango', 'category')
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'rango' AND `django_content_type`.`model` = 'userprofile'); args=('rango', 'userprofile')
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'rango' AND `django_content_type`.`model` = 'page'); args=('rango', 'page')
+DEBUG (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (8, 9, 7) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(8, 9, 7)
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'rango'; args=('rango',)
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'aggregation_test' AND `django_content_type`.`model` = 'book'); args=('aggregation_test', 'book')
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'aggregation_test' AND `django_content_type`.`model` = 'publisher'); args=('aggregation_test', 'publisher')
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'aggregation_test' AND `django_content_type`.`model` = 'author'); args=('aggregation_test', 'author')
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'aggregation_test' AND `django_content_type`.`model` = 'store'); args=('aggregation_test', 'store')
+DEBUG (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (16, 17, 18, 19) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(16, 17, 18, 19)
+DEBUG (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'aggregation_test'; args=('aggregation_test',)
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.005) SHOW FULL TABLES; args=None
+DEBUG (0.002) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.003) SELECT `rango_category`.`id`, `rango_category`.`name`, `rango_category`.`views`, `rango_category`.`likes`, `rango_category`.`slug` FROM `rango_category` ORDER BY `rango_category`.`likes` DESC LIMIT 5; args=()
+DEBUG (0.001) SELECT `rango_page`.`id`, `rango_page`.`category_id`, `rango_page`.`title`, `rango_page`.`url`, `rango_page`.`views` FROM `rango_page` ORDER BY `rango_page`.`views` DESC LIMIT 5; args=()
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.002) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'a02q379es35hh384o24w36xgs60fjptp' LIMIT 1; args=('a02q379es35hh384o24w36xgs60fjptp',)
+DEBUG (0.007) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('a02q379es35hh384o24w36xgs60fjptp', 'ZmU2YTlmNzRjNGE3MjBkMmExYzdmMDA0ZGNlNjAzMDgyMjY5ODc1YTp7InZpc2l0cyI6MSwibGFzdF92aXNpdCI6IjIwMTctMDItMTggMTg6NDk6MTIuNjU3NTYxIn0=', '2017-03-04 18:49:12.708610'); args=('a02q379es35hh384o24w36xgs60fjptp', 'ZmU2YTlmNzRjNGE3MjBkMmExYzdmMDA0ZGNlNjAzMDgyMjY5ODc1YTp7InZpc2l0cyI6MSwibGFzdF92aXNpdCI6IjIwMTctMDItMTggMTg6NDk6MTIuNjU3NTYxIn0=', '2017-03-04 18:49:12.708610')
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.004) SELECT `rango_category`.`id`, `rango_category`.`name`, `rango_category`.`views`, `rango_category`.`likes`, `rango_category`.`slug` FROM `rango_category` WHERE `rango_category`.`slug` = 'python'; args=('python',)
+DEBUG (0.002) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2017-02-18 18:49:14.666449' AND `django_session`.`session_key` = 'a02q379es35hh384o24w36xgs60fjptp'); args=('2017-02-18 18:49:14.666449', 'a02q379es35hh384o24w36xgs60fjptp')
+DEBUG (0.002) SELECT `rango_page`.`id`, `rango_page`.`category_id`, `rango_page`.`title`, `rango_page`.`url`, `rango_page`.`views` FROM `rango_page` WHERE `rango_page`.`category_id` = 3; args=(3,)
+DEBUG (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2017-02-18 18:49:16.031046' AND `django_session`.`session_key` = 'a02q379es35hh384o24w36xgs60fjptp'); args=('2017-02-18 18:49:16.031046', 'a02q379es35hh384o24w36xgs60fjptp')
+DEBUG (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.002) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2017-02-18 18:49:17.128936' AND `django_session`.`session_key` = 'a02q379es35hh384o24w36xgs60fjptp'); args=('2017-02-18 18:49:17.128936', 'a02q379es35hh384o24w36xgs60fjptp')
+DEBUG (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.002) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2017-02-18 18:49:18.219362' AND `django_session`.`session_key` = 'a02q379es35hh384o24w36xgs60fjptp'); args=('2017-02-18 18:49:18.219362', 'a02q379es35hh384o24w36xgs60fjptp')
+DEBUG (0.002) SELECT `rango_category`.`id`, `rango_category`.`name`, `rango_category`.`views`, `rango_category`.`likes`, `rango_category`.`slug` FROM `rango_category`; args=()
+DEBUG (0.001) SELECT `rango_page`.`id`, `rango_page`.`category_id`, `rango_page`.`title`, `rango_page`.`url`, `rango_page`.`views` FROM `rango_page`; args=()
+DEBUG (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.002) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2017-02-18 18:49:18.689352' AND `django_session`.`session_key` = 'a02q379es35hh384o24w36xgs60fjptp'); args=('2017-02-18 18:49:18.689352', 'a02q379es35hh384o24w36xgs60fjptp')
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.001) SELECT VERSION(); args=None
+DEBUG (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2017-02-18 18:49:19.441939' AND `django_session`.`session_key` = 'a02q379es35hh384o24w36xgs60fjptp'); args=('2017-02-18 18:49:19.441939', 'a02q379es35hh384o24w36xgs60fjptp')
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2017-02-18 18:49:20.394615' AND `django_session`.`session_key` = 'a02q379es35hh384o24w36xgs60fjptp'); args=('2017-02-18 18:49:20.394615', 'a02q379es35hh384o24w36xgs60fjptp')
+DEBUG (0.002) SELECT `rango_category`.`id`, `rango_category`.`name`, `rango_category`.`views`, `rango_category`.`likes`, `rango_category`.`slug` FROM `rango_category` ORDER BY `rango_category`.`likes` DESC LIMIT 5; args=()
+DEBUG (0.002) SELECT `rango_page`.`id`, `rango_page`.`category_id`, `rango_page`.`title`, `rango_page`.`url`, `rango_page`.`views` FROM `rango_page` ORDER BY `rango_page`.`views` DESC LIMIT 5; args=()
+DEBUG (0.006) UPDATE `django_session` SET `session_data` = 'ZDZkN2M3MTAzMjkzOGI3M2RlZjIxN2I1NWVlZDgxODMxNzVkNWI0Zjp7InZpc2l0cyI6MiwibGFzdF92aXNpdCI6IjIwMTctMDItMTggMTg6NDk6MjAuNDAyNjAyIn0=', `expire_date` = '2017-03-04 18:49:20.422616' WHERE `django_session`.`session_key` = 'a02q379es35hh384o24w36xgs60fjptp'; args=('ZDZkN2M3MTAzMjkzOGI3M2RlZjIxN2I1NWVlZDgxODMxNzVkNWI0Zjp7InZpc2l0cyI6MiwibGFzdF92aXNpdCI6IjIwMTctMDItMTggMTg6NDk6MjAuNDAyNjAyIn0=', '2017-03-04 18:49:20.422616', 'a02q379es35hh384o24w36xgs60fjptp')
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.016) SHOW FULL TABLES; args=None
+DEBUG (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.016) SHOW FULL TABLES; args=None
+DEBUG (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.016) SHOW FULL TABLES; args=None
+DEBUG (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.016) SHOW FULL TABLES; args=None
+DEBUG (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.000) SHOW FULL TABLES; args=None
+DEBUG (0.016) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.016) SHOW FULL TABLES; args=None
+DEBUG (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.001) SELECT `rango_category`.`id`, `rango_category`.`name`, `rango_category`.`views`, `rango_category`.`likes`, `rango_category`.`slug` FROM `rango_category` ORDER BY `rango_category`.`likes` DESC LIMIT 5; args=()
+DEBUG (0.000) SELECT `rango_page`.`id`, `rango_page`.`category_id`, `rango_page`.`title`, `rango_page`.`url`, `rango_page`.`views` FROM `rango_page` ORDER BY `rango_page`.`views` DESC LIMIT 5; args=()
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.001) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'mlkn8u9qs4nexlxm086v01w0k2wzpx6a' LIMIT 1; args=('mlkn8u9qs4nexlxm086v01w0k2wzpx6a',)
+DEBUG (0.000) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('mlkn8u9qs4nexlxm086v01w0k2wzpx6a', 'MDA0NmZjNzNkYTBmYWU2MGY2NmUyNmJmYTJkOTY2NDI2NDg4MGQzYjp7InZpc2l0cyI6MSwibGFzdF92aXNpdCI6IjIwMTctMDItMTggMjM6MDA6MzUuMTUxNTA1In0=', '2017-03-04 23:00:35.207543'); args=('mlkn8u9qs4nexlxm086v01w0k2wzpx6a', 'MDA0NmZjNzNkYTBmYWU2MGY2NmUyNmJmYTJkOTY2NDI2NDg4MGQzYjp7InZpc2l0cyI6MSwibGFzdF92aXNpdCI6IjIwMTctMDItMTggMjM6MDA6MzUuMTUxNTA1In0=', '2017-03-04 23:00:35.207543')
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'mlkn8u9qs4nexlxm086v01w0k2wzpx6a' AND `django_session`.`expire_date` > '2017-02-18 23:00:36.553837'); args=('mlkn8u9qs4nexlxm086v01w0k2wzpx6a', '2017-02-18 23:00:36.553837')
+DEBUG (0.000) SELECT `rango_category`.`id`, `rango_category`.`name`, `rango_category`.`views`, `rango_category`.`likes`, `rango_category`.`slug` FROM `rango_category` ORDER BY `rango_category`.`likes` DESC LIMIT 5; args=()
+DEBUG (0.001) SELECT `rango_page`.`id`, `rango_page`.`category_id`, `rango_page`.`title`, `rango_page`.`url`, `rango_page`.`views` FROM `rango_page` ORDER BY `rango_page`.`views` DESC LIMIT 5; args=()
+DEBUG (0.001) UPDATE `django_session` SET `session_data` = 'MDA0NmZjNzNkYTBmYWU2MGY2NmUyNmJmYTJkOTY2NDI2NDg4MGQzYjp7InZpc2l0cyI6MSwibGFzdF92aXNpdCI6IjIwMTctMDItMTggMjM6MDA6MzUuMTUxNTA1In0=', `expire_date` = '2017-03-04 23:00:36.578837' WHERE `django_session`.`session_key` = 'mlkn8u9qs4nexlxm086v01w0k2wzpx6a'; args=('MDA0NmZjNzNkYTBmYWU2MGY2NmUyNmJmYTJkOTY2NDI2NDg4MGQzYjp7InZpc2l0cyI6MSwibGFzdF92aXNpdCI6IjIwMTctMDItMTggMjM6MDA6MzUuMTUxNTA1In0=', '2017-03-04 23:00:36.578837', 'mlkn8u9qs4nexlxm086v01w0k2wzpx6a')
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.001) SELECT VERSION(); args=None
+DEBUG (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'mlkn8u9qs4nexlxm086v01w0k2wzpx6a' AND `django_session`.`expire_date` > '2017-02-18 23:00:37.367339'); args=('mlkn8u9qs4nexlxm086v01w0k2wzpx6a', '2017-02-18 23:00:37.367339')
+DEBUG (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'mlkn8u9qs4nexlxm086v01w0k2wzpx6a' AND `django_session`.`expire_date` > '2017-02-18 23:01:17.836041'); args=('mlkn8u9qs4nexlxm086v01w0k2wzpx6a', '2017-02-18 23:01:17.836041')
+DEBUG (0.001) SELECT `rango_category`.`id`, `rango_category`.`name`, `rango_category`.`views`, `rango_category`.`likes`, `rango_category`.`slug` FROM `rango_category`; args=()
+DEBUG (0.002) SELECT `rango_page`.`id`, `rango_page`.`category_id`, `rango_page`.`title`, `rango_page`.`url`, `rango_page`.`views` FROM `rango_page`; args=()
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.001) SELECT VERSION(); args=None
+DEBUG (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'mlkn8u9qs4nexlxm086v01w0k2wzpx6a' AND `django_session`.`expire_date` > '2017-02-18 23:05:41.476602'); args=('mlkn8u9qs4nexlxm086v01w0k2wzpx6a', '2017-02-18 23:05:41.476602')
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.078) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'mlkn8u9qs4nexlxm086v01w0k2wzpx6a' AND `django_session`.`expire_date` > '2017-02-18 23:08:13.057168'); args=('mlkn8u9qs4nexlxm086v01w0k2wzpx6a', '2017-02-18 23:08:13.057168')
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.016) SHOW FULL TABLES; args=None
+DEBUG (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.051) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'mlkn8u9qs4nexlxm086v01w0k2wzpx6a' AND `django_session`.`expire_date` > '2017-02-18 23:38:06.047878'); args=('mlkn8u9qs4nexlxm086v01w0k2wzpx6a', '2017-02-18 23:38:06.047878')
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.062) SHOW FULL TABLES; args=None
+DEBUG (0.016) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+DEBUG (0.005) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.001) SELECT VERSION(); args=None
+DEBUG (0.147) SHOW FULL TABLES; args=None
+DEBUG (0.089) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+DEBUG (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.017) SHOW FULL TABLES; args=None
+DEBUG (0.007) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.053) SELECT `rango_category`.`id`, `rango_category`.`name`, `rango_category`.`views`, `rango_category`.`likes`, `rango_category`.`slug` FROM `rango_category` ORDER BY `rango_category`.`likes` DESC LIMIT 5; args=()
+DEBUG (0.022) SELECT `rango_page`.`id`, `rango_page`.`category_id`, `rango_page`.`title`, `rango_page`.`url`, `rango_page`.`views` FROM `rango_page` ORDER BY `rango_page`.`views` DESC LIMIT 5; args=()
+DEBUG (0.001) SELECT VERSION(); args=None
+DEBUG (0.038) SELECT (1) AS `a` FROM `django_session` WHERE `django_session`.`session_key` = 'tv1ezfxdalw1ta6fe6h7fw7f2uvgnpvv' LIMIT 1; args=('tv1ezfxdalw1ta6fe6h7fw7f2uvgnpvv',)
+DEBUG (0.028) INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES ('tv1ezfxdalw1ta6fe6h7fw7f2uvgnpvv', 'OGFiNWVhNDdkOWEzNTU1YjFkMGJkOGY3ZjIxYTgyMDMwMmRlMzZlMDp7InZpc2l0cyI6MSwibGFzdF92aXNpdCI6IjIwMTctMDItMTkgMTQ6NTE6MjUuNTUwNjQ3In0=', '2017-03-05 14:51:25.730534'); args=('tv1ezfxdalw1ta6fe6h7fw7f2uvgnpvv', 'OGFiNWVhNDdkOWEzNTU1YjFkMGJkOGY3ZjIxYTgyMDMwMmRlMzZlMDp7InZpc2l0cyI6MSwibGFzdF92aXNpdCI6IjIwMTctMDItMTkgMTQ6NTE6MjUuNTUwNjQ3In0=', '2017-03-05 14:51:25.730534')
+DEBUG (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.004) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2017-02-19 14:51:27.956762' AND `django_session`.`session_key` = 'tv1ezfxdalw1ta6fe6h7fw7f2uvgnpvv'); args=('2017-02-19 14:51:27.956762', 'tv1ezfxdalw1ta6fe6h7fw7f2uvgnpvv')
+DEBUG (0.004) SELECT `rango_category`.`id`, `rango_category`.`name`, `rango_category`.`views`, `rango_category`.`likes`, `rango_category`.`slug` FROM `rango_category` ORDER BY `rango_category`.`likes` DESC LIMIT 5; args=()
+DEBUG (0.002) SELECT `rango_page`.`id`, `rango_page`.`category_id`, `rango_page`.`title`, `rango_page`.`url`, `rango_page`.`views` FROM `rango_page` ORDER BY `rango_page`.`views` DESC LIMIT 5; args=()
+DEBUG (0.033) UPDATE `django_session` SET `session_data` = 'OGFiNWVhNDdkOWEzNTU1YjFkMGJkOGY3ZjIxYTgyMDMwMmRlMzZlMDp7InZpc2l0cyI6MSwibGFzdF92aXNpdCI6IjIwMTctMDItMTkgMTQ6NTE6MjUuNTUwNjQ3In0=', `expire_date` = '2017-03-05 14:51:28.005646' WHERE `django_session`.`session_key` = 'tv1ezfxdalw1ta6fe6h7fw7f2uvgnpvv'; args=('OGFiNWVhNDdkOWEzNTU1YjFkMGJkOGY3ZjIxYTgyMDMwMmRlMzZlMDp7InZpc2l0cyI6MSwibGFzdF92aXNpdCI6IjIwMTctMDItMTkgMTQ6NTE6MjUuNTUwNjQ3In0=', '2017-03-05 14:51:28.005646', 'tv1ezfxdalw1ta6fe6h7fw7f2uvgnpvv')
+DEBUG (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.001) SELECT VERSION(); args=None
+DEBUG (0.004) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2017-02-19 14:51:29.921771' AND `django_session`.`session_key` = 'tv1ezfxdalw1ta6fe6h7fw7f2uvgnpvv'); args=('2017-02-19 14:51:29.921771', 'tv1ezfxdalw1ta6fe6h7fw7f2uvgnpvv')
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.003) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2017-02-19 14:51:30.717552' AND `django_session`.`session_key` = 'tv1ezfxdalw1ta6fe6h7fw7f2uvgnpvv'); args=('2017-02-19 14:51:30.717552', 'tv1ezfxdalw1ta6fe6h7fw7f2uvgnpvv')
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.002) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2017-02-19 14:51:31.960292' AND `django_session`.`session_key` = 'tv1ezfxdalw1ta6fe6h7fw7f2uvgnpvv'); args=('2017-02-19 14:51:31.960292', 'tv1ezfxdalw1ta6fe6h7fw7f2uvgnpvv')
+DEBUG (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.011) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2017-02-19 14:51:36.321442' AND `django_session`.`session_key` = 'tv1ezfxdalw1ta6fe6h7fw7f2uvgnpvv'); args=('2017-02-19 14:51:36.321442', 'tv1ezfxdalw1ta6fe6h7fw7f2uvgnpvv')
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.000) SELECT VERSION(); args=None
+DEBUG (0.003) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2017-02-19 14:51:37.136776' AND `django_session`.`session_key` = 'tv1ezfxdalw1ta6fe6h7fw7f2uvgnpvv'); args=('2017-02-19 14:51:37.136776', 'tv1ezfxdalw1ta6fe6h7fw7f2uvgnpvv')
+DEBUG (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG (0.001) SELECT VERSION(); args=None
+DEBUG (0.002) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2017-02-19 14:51:38.074311' AND `django_session`.`session_key` = 'tv1ezfxdalw1ta6fe6h7fw7f2uvgnpvv'); args=('2017-02-19 14:51:38.074311', 'tv1ezfxdalw1ta6fe6h7fw7f2uvgnpvv')

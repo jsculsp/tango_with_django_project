@@ -1,0 +1,48 @@
+5856 - [ERROR] [2017-02-18 23:05:41] - [C:\Python34\lib\site-packages\django\core\handlers\exception.py:124] - Internal Server Error: /redis-demo/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view redis_demo.views.index didn't return an HttpResponse object. It returned None instead.
+5856 - [ERROR] [2017-02-18 23:05:41] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "POST /redis-demo/ HTTP/1.1" 500 71206
+5856 - [ERROR] [2017-02-18 23:08:13] - [C:\Python34\lib\site-packages\django\core\handlers\exception.py:124] - Internal Server Error: /redis-demo/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view redis_demo.views.index didn't return an HttpResponse object. It returned None instead.
+5856 - [ERROR] [2017-02-18 23:08:13] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "POST /redis-demo/ HTTP/1.1" 500 71206
+4280 - [ERROR] [2017-02-18 23:38:06] - [C:\Python34\lib\site-packages\django\core\handlers\exception.py:124] - Internal Server Error: /redis-demo/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django_redis\client\default.py", line 319, in decode
+    value = int(value)
+ValueError: invalid literal for int() with base 10: b'\xe5\xbe\x90\xe4\xb8\xbd\xe5\xa8\x85'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\ §≈Û\Desktop\tango_with_django\redis_demo\views.py", line 6, in index
+    name = cache.get('name')
+  File "C:\Python34\lib\site-packages\django_redis\cache.py", line 34, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Python34\lib\site-packages\django_redis\cache.py", line 83, in get
+    client=client)
+  File "C:\Python34\lib\site-packages\django_redis\client\default.py", line 214, in get
+    return self.decode(value)
+  File "C:\Python34\lib\site-packages\django_redis\client\default.py", line 326, in decode
+    value = self._serializer.loads(value)
+  File "C:\Python34\lib\site-packages\django_redis\serializers\pickle.py", line 36, in loads
+    return pickle.loads(force_bytes(value))
+_pickle.UnpicklingError
+4280 - [ERROR] [2017-02-18 23:38:06] - [C:\Python34\lib\site-packages\django\core\servers\basehttp.py:131] - "GET /redis-demo/ HTTP/1.1" 500 100971
+8364 - [ERROR] [2017-02-19 14:48:42] - [C:\Python34\lib\site-packages\django\core\handlers\exception.py:73] - Invalid HTTP_HOST header: '192.168.0.101:3000'. You may need to add '192.168.0.101' to ALLOWED_HOSTS.
+8364 - [ERROR] [2017-02-19 14:48:43] - [C:\Python34\lib\site-packages\django\core\handlers\exception.py:73] - Invalid HTTP_HOST header: '192.168.0.101:3000'. You may need to add '192.168.0.101' to ALLOWED_HOSTS.
+8364 - [ERROR] [2017-02-19 14:48:43] - [C:\Python34\lib\site-packages\django\core\handlers\exception.py:73] - Invalid HTTP_HOST header: '192.168.0.101:3000'. You may need to add '192.168.0.101' to ALLOWED_HOSTS.
