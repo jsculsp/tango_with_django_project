@@ -1,5 +1,7 @@
 from datetime import datetime
 import json
+import os
+import zipfile
 
 from django.shortcuts import render
 from django.shortcuts import redirect
@@ -44,9 +46,6 @@ def index(request):
     # Retrieve the top 5 only - or all if less than 5.
     # Place the list in our context_dict dictionary
     # that will be passed to the template engine.
-
-    plog(request.META)
-
     category_list = Category.objects.order_by('-likes')[:5]
     page_list = Page.objects.order_by('-views')[:5]
     context_dict = {'categories': category_list,
@@ -163,8 +162,9 @@ def test(request):
 
 def upload(request):
     file = request.FILES['file']
-    with open('temp.jpg', 'wb') as f:
-        f.write(file.read())
+    if zipfile.is_zipfile(file):
+        with zipfile.ZipFile(file) as zf:
+            zf.extractall(r'C:\Users\linmu\Desktop\temp')
     return redirect(reverse(index))
 
 
