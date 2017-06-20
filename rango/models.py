@@ -43,4 +43,3 @@ class UserProfile(models.Model):
     # Remember if you use Python 2.7x, define __unicode__ !
     def __str__(self):
         return self.user.username
-

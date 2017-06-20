@@ -21,8 +21,7 @@ ALLOWED_HOSTS = ['192.168.4.134', '.linmu.date', '127.0.0.1']
 ## Cache ##
 CACHES = {
     "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1",
+        "BACKEND": "django_redis.cache.RedisCache", "LOCATION": "redis://127.0.0.1:6379/1",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
             "CONNECTION_POOL_KWARGS": {"max_connections": 100},
@@ -30,27 +29,25 @@ CACHES = {
         }
     }
 }
-REDIS_TIMEOUT = 7*24*60*60
+REDIS_TIMEOUT = 7 * 24 * 60 * 60
 
 ## Database ##
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'tango_with_django',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
+    'default':
+        {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'tango_with_django',
+            'USER': 'root',
+            'PASSWORD': 'root',
+            'HOST': 'localhost', 'PORT': '3306',
+        }
 }
 
 ## Debugging ##
 DEBUG = True
 
 ## Email ##
-ADMINS = (
-    ('Mu Lin', '328232234@qq.com'),
-)
+ADMINS = (('Mu Lin', '328232234@qq.com'),)
 EMAIL_HOST = 'smtp.qq.com'  # 'smtp.qiye.163.com'
 EMAIL_HOST_PASSWORD = 'secret'
 EMAIL_HOST_USER = '328232234@qq.com'
@@ -73,13 +70,9 @@ USE_TZ = False
 ## HTTP ##
 DEFAULT_CHARSET = 'utf-8'
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    # 'subdomains.middleware.SubdomainURLRoutingMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.security.SecurityMiddleware', 'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware', 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware', 'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
@@ -88,14 +81,11 @@ WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    'formatters':{
+    'formatters': {
         'verbose': {
             'format': '%(process)d - [%(levelname)s] [%(asctime)s] - [%(pathname)s:%(lineno)d] - %(message)s',
-            'datefmt': '%Y-%m-%d %H:%M:%S',
-        },
-        'simple': {
-            'format': '%(levelname)s %(message)s'
-        },
+            'datefmt': '%Y-%m-%d %H:%M:%S', },
+        'simple': {'format': '%(levelname)s %(message)s'},
     },
     'filters': {
         'require_debug_false': {
@@ -117,8 +107,7 @@ LOGGING = {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'filename': BASE_DIR + '/logs/info.log',
-            'formatter': 'verbose',
-            'filters': ['require_debug_true'],
+            'formatter': 'verbose', 'filters': ['require_debug_true'],
         },
         'error_handler': {
             'level': 'ERROR',
@@ -135,8 +124,7 @@ LOGGING = {
             'level': 'WARNING',
             'class': 'logging.FileHandler',
             'filename': BASE_DIR + '/logs/warning.log',
-            'formatter': 'verbose',
-            'filters': ['require_debug_true'],
+            'formatter': 'verbose', 'filters': ['require_debug_true'],
         },
         'mail_admins': {
             'include_html': True,
@@ -153,8 +141,7 @@ LOGGING = {
         },
         'django.request': {
             'handlers': ['warning_handler'],
-            'level': 'WARNING',
-            'propagate': True,
+            'level': 'WARNING', 'propagate': True,
         },
         'django.template': {
             'handlers': ['info_handler', 'error_handler'],
@@ -170,32 +157,19 @@ LOGGING = {
 }
 
 ## Models ##
-INSTALLED_APPS = [
-    # django build in apps
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+INSTALLED_APPS = [  # django build in apps
+    'django.contrib.admin', 'django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions',
+    'django.contrib.messages', 'django.contrib.staticfiles',
 
     # third part apps
-    'registration',
-    'django_jinja',
-    'django_jinja.contrib._easy_thumbnails',
-    'easy_thumbnails',
-    'django_jinja.contrib._humanize',
-    # 'django_jinja.contrib._subdomains',
+    'registration', 'django_jinja', 'django_jinja.contrib._easy_thumbnails', 'easy_thumbnails',
+    'django_jinja.contrib._humanize',  # 'django_jinja.contrib._subdomains',
+
     # 'subdomains',
-    'django_redis',
-    'redis',
-    'kombu.transport.django',
+    'django_redis', 'redis', 'kombu.transport.django',
 
     # my own apps
-    'rango.apps.RangoConfig',
-    'aggregation_test',
-    'redis_demo',
-]
+    'rango.apps.RangoConfig', 'aggregation_test', 'redis_demo', ]
 
 ## Security ##
 SECRET_KEY = 'dm%olv4m2tv62dhwk1vazxc92^#hhk10r7--n+s=-g*a)287bj'
@@ -204,25 +178,18 @@ SECRET_KEY = 'dm%olv4m2tv62dhwk1vazxc92^#hhk10r7--n+s=-g*a)287bj'
 TEMPLATES = [
     {
         'BACKEND': 'django_jinja.backend.Jinja2',
-        'DIRS': [TEMPLATE_DIR,],
+        'DIRS': [TEMPLATE_DIR, ],
         'APP_DIRS': True,
         'OPTIONS': {
-            'finalize': lambda x: x if x !='asdfasdfasdf' else '没有这个变量呀！',
+            'finalize': lambda x: x if x != 'asdfasdfasdf' else '没有这个变量呀！',
             'match_extension': '.html',
             'match_regex': r'^(?!(admin|rango|registration|templatetags)/).*',  # This is additive to match_extension
-            'app_dirname': 'templates',
-            'undefined': Undefined,
-            'newstyle_gettext': True,
+            'app_dirname': 'templates', 'undefined': Undefined, 'newstyle_gettext': True,
             'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.media',
-            ],
-            'extensions': DEFAULT_EXTENSIONS + [
-
-            ],
+                'django.template.context_processors.debug', 'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth', 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media', ],
+            'extensions': DEFAULT_EXTENSIONS + [],
             'autoescape': True,
             'auto_reload': DEBUG,
             'translation_engine': 'django.utils.translation',
@@ -230,7 +197,7 @@ TEMPLATES = [
     },
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR,],
+        'DIRS': [TEMPLATE_DIR, ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -238,8 +205,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.media',
-            ],
+                'django.template.context_processors.media', ],
         },
     }
 ]
@@ -263,7 +229,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-        'OPTIONS': { 'min_length': 6, },
+        'OPTIONS': {'min_length': 6,
+                    },
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
@@ -291,4 +258,3 @@ STATIC_URL = '/static/'
 BROKER_URL = 'redis://127.0.0.1:6379/1'
 BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
 CELERY_IGNORE_RESULT = True
-
