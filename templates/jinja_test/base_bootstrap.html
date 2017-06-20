@@ -73,7 +73,7 @@
 
             <div id="cats">
                 {% block sidebar_block %}
-                    {{ get_category_list(category) }}
+{#                    {{ get_category_list(category) }}#}
                 {% endblock %}
             </div>
 
@@ -86,22 +86,9 @@
         </div>
       </div>
     </div>
-
-     <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="{{ static('js/jquery-3.1.1.min.js') }}"></script>
- <!--
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
- -->
     <script src="{{ static('js/tether.min.js') }}"></script>
     <script src="{{ static('js/bootstrap.min.js') }}"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <!--
-    <script src="https://v4-alpha.getbootstrap.com/assets/js/vendor/holder.min.js"></script>
-    -->
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="{{ static('js/ie10-viewport-bug-workaround.js') }}"></script>
   </body>
 </html>
