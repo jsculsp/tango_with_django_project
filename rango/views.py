@@ -1,6 +1,4 @@
 from datetime import datetime
-import json
-import os
 import zipfile
 
 from django.shortcuts import render
@@ -11,7 +9,6 @@ from registration.backends.simple.views import RegistrationView
 
 from rango.models import Category, Page
 from rango.forms import CategoryForm, PageForm
-from rango.models import Page
 
 
 from utils import log, plog

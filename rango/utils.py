@@ -8,7 +8,7 @@ from django.core.cache import cache
 def read_from_cache(user_name):
     key = 'user_id_of_{}'.format(user_name)
     value = cache.get(key)
-    if value == None:
+    if value is None:
         data = None
     else:
         data = json.loads(value)
