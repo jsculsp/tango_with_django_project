@@ -30,6 +30,7 @@ def verify_async_signature(**kwargs):
 
 
 def __verify_ras2_signature(data, sign):
+    data = data.encode('utf-8')
     digest = SHA256.new()
     digest.update(data)
     return verifier.verify(digest, base64.b64decode(sign))
