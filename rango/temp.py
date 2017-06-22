@@ -25,22 +25,22 @@ def verify_wechat_signature(view_func):
                 <return_msg><![CDATA[{1}]]></return_msg>
             </xml>
         """
-        try:
-            # 验证签名是否正确
-            body = request.body
-            root = ET.fromstring(body)
-            params = dict()
-            for child in root:
-                params[child.tag] = child.text
-            request.params = copy.deepcopy(params)
-            del params['sign']
-            if not sign.verify_sign(params, WEPAY_APIKEY, request.REQUEST['sign']):
-                content = content.format('FAIL', 'NOT OK')
-                log('debug location xixihaha')
-                return HttpResponse(content, mimetype="application/xml")
-        except:
+        # try:
+        # 验证签名是否正确
+        body = request.body
+        root = ET.fromstring(body)
+        params = dict()
+        for child in root:
+            params[child.tag] = child.text
+        request.params = copy.deepcopy(params)
+        del params['sign']
+        if not sign.verify_sign(params, WEPAY_APIKEY, request.REQUEST['sign']):
             content = content.format('FAIL', 'NOT OK')
+            log('debug location xixihaha')
             return HttpResponse(content, mimetype="application/xml")
+        # except:
+        #     content = content.format('FAIL', 'NOT OK')
+        #     return HttpResponse(content, mimetype="application/xml")
 
         return view_func(request, *args, **kwargs)
 
