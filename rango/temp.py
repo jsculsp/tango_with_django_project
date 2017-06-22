@@ -37,7 +37,6 @@ def verify_wechat_signature(view_func):
                 <return_msg><![CDATA[{1}]]></return_msg>
             </xml>
         """
-        # try:
         # 验证签名是否正确
         body = request.body
         root = ET.fromstring(body)
@@ -51,10 +50,6 @@ def verify_wechat_signature(view_func):
             content = content.format('FAIL', 'NOT OK')
             log('debug location xixihaha')
             return HttpResponse(content, content_type="application/xml")
-        # except:
-        #     content = content.format('FAIL', 'NOT OK')
-        #     return HttpResponse(content, mimetype="application/xml")
-
         return view_func(request, *args, **kwargs)
 
     return wrapped_view
@@ -69,11 +64,11 @@ def fcoin_order_notify_wepay(request):
                     <return_msg><![CDATA[{1}]]></return_msg>
                 </xml>
             """
-    result_code = request.POST['result_code']
+    result_code = request.params['result_code']
     if result_code != 'SUCCESS':
         content = content.format('FAIL', 'NOT OK')
         return HttpResponse(content, content_type='application/xml')
     out_trade_no = request.POST['out_trade_no']
-
+    log('out_trade_no: ', out_trade_no)
     content = content.format('SUCCESS', 'OK')
     return HttpResponse(content, content_type='application/xml')
