@@ -1,0 +1,58 @@
+import copy
+import json
+from functools import wraps
+
+from django.utils.decorators import available_attrs
+from django.http import HttpResponse
+
+from rango import sign
+from tango_with_django_project.utils.log import log, plog
+
+WEPAY_APIKEY = u"ffa02b3acd6c11e68cc600163e003d10"
+
+
+def verify_wechat_signature(view_func):
+    """
+    校验微信签名
+    """
+    @wraps(view_func, assigned=available_attrs(view_func))
+    def wrapped_view(request, *args, **kwargs):
+        content = """
+            <xml>
+                <return_code><![CDATA[{0}]]></return_code>
+                <return_msg><![CDATA[{1}]]></return_msg>
+            </xml>
+        """
+        try:
+            # 验证签名是否正确
+            params = copy.deepcopy(dict(request.REQUEST))
+            plog(params)
+            del params['sign']
+            if not sign.verify_sign(params, WEPAY_APIKEY, request.REQUEST['sign']):
+                content = content.format('FAIL', 'NOT OK')
+                return HttpResponse(content, mimetype="application/xml")
+        except:
+            content = content.format('FAIL', 'NOT OK')
+            return HttpResponse(content, mimetype="application/xml")
+
+        return view_func(request, *args, **kwargs)
+
+    return wrapped_view
+
+
+@verify_wechat_signature
+def fcoin_order_notify_wepay(request):
+    content = """
+                <xml>
+                    <return_code><![CDATA[{0}]]></return_code>
+                    <return_msg><![CDATA[{1}]]></return_msg>
+                </xml>
+            """
+    result_code = request.POST['result_code']
+    if result_code != 'SUCCESS':
+        content = content.format('FAIL', 'NOT OK')
+        return HttpResponse(content, mimetype='application/xml')
+    out_trade_no = request.POST['out_trade_no']
+
+    content = content.format('SUCCESS', 'OK')
+    return HttpResponse(content, mimetype='application/xml')
