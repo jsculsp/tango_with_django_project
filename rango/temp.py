@@ -3,6 +3,9 @@ import json
 from functools import wraps
 from xml.etree import cElementTree as ET
 import hashlib
+import base64
+from Crypto.Hash import SHA256
+from Crypto.Signature import PKCS1_v1_5 as Signature_pkcs1_v1_5
 
 from django.utils.decorators import available_attrs
 from django.http import HttpResponse
@@ -11,6 +14,24 @@ from django.views.decorators.csrf import csrf_exempt
 from tango_with_django_project.utils.log import log, plog
 
 WEPAY_APIKEY = u"ffa02b3acd6c11e68cc600163e003d10"
+verifier = Signature_pkcs1_v1_5.new(None)
+
+
+def verify_async_signature(**kwargs):
+    sign = kwargs[u"sign"]
+    arguments = [(key, val) for (key, val) in kwargs.items() if val and key != u"sign" and key != u"sign_type"]
+    arguments.sort(key=lambda p: p[0])
+    data = u""
+    for (key, val) in arguments:
+        data += key + u"=" + val + u"&"
+    data = data[:-1]
+    return __verify_ras2_signature(data, sign)
+
+
+def __verify_ras2_signature(data, sign):
+    digest = SHA256.new()
+    digest.update(data)
+    return verifier.verify(digest, base64.b64decode(sign))
 
 
 def get_md5_signature(**kwargs):
@@ -52,6 +73,18 @@ def verify_wechat_signature(view_func):
             return HttpResponse(content, content_type="application/xml")
         return view_func(request, *args, **kwargs)
 
+    return wrapped_view
+
+
+def verify_alipay_signature(view_func):
+    @wraps(view_func, assigned=available_attrs(view_func))
+    def wrapped_view(request, *args, **kwargs):
+        params = copy.deepcopy(dict(request.POST))
+        if verify_async_signature(**params):
+            log('debug location 0...')
+            return view_func(request, *args, **kwargs)
+        else:
+            return HttpResponse('fail')
     return wrapped_view
 
 
