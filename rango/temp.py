@@ -27,8 +27,8 @@ def verify_wechat_signature(view_func):
         """
         try:
             # 验证签名是否正确
-            content = request.body
-            root = ET.fromstring(content)
+            body = request.body
+            root = ET.fromstring(body)
             params = dict()
             for child in root:
                 params[child.tag] = child.text
