@@ -4,6 +4,7 @@ from functools import wraps
 
 from django.utils.decorators import available_attrs
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 from rango import sign
 from tango_with_django_project.utils.log import log, plog
@@ -40,6 +41,7 @@ def verify_wechat_signature(view_func):
     return wrapped_view
 
 
+@csrf_exempt
 @verify_wechat_signature
 def fcoin_order_notify_wepay(request):
     content = """
