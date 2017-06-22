@@ -80,7 +80,7 @@ def verify_wechat_signature(view_func):
 def verify_alipay_signature(view_func):
     @wraps(view_func, assigned=available_attrs(view_func))
     def wrapped_view(request, *args, **kwargs):
-        params = dict(request.POST.iterlists())
+        params = request.POST.dict()
         if verify_async_signature(**params):
             log('debug location 0...')
             return view_func(request, *args, **kwargs)
