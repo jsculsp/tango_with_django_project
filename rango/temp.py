@@ -18,7 +18,7 @@ def verify_wechat_signature(view_func):
     """
     @wraps(view_func, assigned=available_attrs(view_func))
     def wrapped_view(request, *args, **kwargs):
-        plog(request.REQUEST)
+        plog(request.POST)
         content = """
             <xml>
                 <return_code><![CDATA[{0}]]></return_code>
@@ -27,10 +27,10 @@ def verify_wechat_signature(view_func):
         """
         try:
             # 验证签名是否正确
-            params = copy.deepcopy(dict(request.REQUEST))
+            params = copy.deepcopy(dict(request.POST))
             plog(params)
             del params['sign']
-            if not sign.verify_sign(params, WEPAY_APIKEY, request.REQUEST['sign']):
+            if not sign.verify_sign(params, WEPAY_APIKEY, request.POST['sign']):
                 content = content.format('FAIL', 'NOT OK')
                 return HttpResponse(content, content_type="application/xml")
         except:
