@@ -34,6 +34,7 @@ def verify_wechat_signature(view_func):
                 content = content.format('FAIL', 'NOT OK')
                 return HttpResponse(content, content_type="application/xml")
         except:
+            log('debug location 0...')
             content = content.format('FAIL', 'NOT OK')
             return HttpResponse(content, content_type="application/xml")
 
