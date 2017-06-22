@@ -47,7 +47,7 @@ def make_sign(params, key, **kargs):
 
     params['key'] = key
     sign_source = make_source(params)
-    return hashlib.md5(sign_source).hexdigest()
+    return hashlib.md5(sign_source.encode('utf-8')).hexdigest()
 
 def verify_sign(params, key, sign, **kwargs):
     '''
