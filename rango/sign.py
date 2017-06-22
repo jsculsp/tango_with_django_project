@@ -36,9 +36,9 @@ def make_sign(params, key, **kargs):
     '''
     params = copy.deepcopy(params)
     sign_keys = set(params.keys())
-    if kargs.has_key('only') and kargs['only']:
+    if 'only' in kargs and kargs['only']:
         sign_keys = set(params.keys()) & set(kargs['only'])
-    elif kargs.has_key('defer') and kargs['defer']:
+    elif 'defer' in kargs and kargs['defer']:
         sign_keys = set(params.keys()) - set(kargs['defer'])
 
     tmp_params = {}
