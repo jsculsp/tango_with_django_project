@@ -57,4 +57,4 @@ def fcoin_order_notify_wepay(request):
     out_trade_no = request.POST['out_trade_no']
 
     content = content.format('SUCCESS', 'OK')
-    return HttpResponse(content, mimetype='application/xml')
+    return HttpResponse(content, content_type='application/xml')
