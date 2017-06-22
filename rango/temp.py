@@ -31,10 +31,10 @@ def verify_wechat_signature(view_func):
             del params['sign']
             if not sign.verify_sign(params, WEPAY_APIKEY, request.REQUEST['sign']):
                 content = content.format('FAIL', 'NOT OK')
-                return HttpResponse(content, mimetype="application/xml")
+                return HttpResponse(content, content_type="application/xml")
         except:
             content = content.format('FAIL', 'NOT OK')
-            return HttpResponse(content, mimetype="application/xml")
+            return HttpResponse(content, content_type="application/xml")
 
         return view_func(request, *args, **kwargs)
 
@@ -53,7 +53,7 @@ def fcoin_order_notify_wepay(request):
     result_code = request.POST['result_code']
     if result_code != 'SUCCESS':
         content = content.format('FAIL', 'NOT OK')
-        return HttpResponse(content, mimetype='application/xml')
+        return HttpResponse(content, content_type='application/xml')
     out_trade_no = request.POST['out_trade_no']
 
     content = content.format('SUCCESS', 'OK')
