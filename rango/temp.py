@@ -1,6 +1,7 @@
 import copy
 import json
 from functools import wraps
+from xml.etree import cElementTree as ET
 
 from django.utils.decorators import available_attrs
 from django.http import HttpResponse
@@ -18,8 +19,6 @@ def verify_wechat_signature(view_func):
     """
     @wraps(view_func, assigned=available_attrs(view_func))
     def wrapped_view(request, *args, **kwargs):
-        plog(request.body)
-        log('type(request.body): ', type(request.body))
         content = """
             <xml>
                 <return_code><![CDATA[{0}]]></return_code>
@@ -28,15 +27,20 @@ def verify_wechat_signature(view_func):
         """
         try:
             # 验证签名是否正确
-            params = copy.deepcopy(dict(request.POST))
+            content = request.body
+            root = ET.fromstring(content)
+            params = dict()
+            for child in root:
+                params[child.tag] = child.text
+            request.params = copy.deepcopy(params)
             del params['sign']
-            if not sign.verify_sign(params, WEPAY_APIKEY, request.POST['sign']):
+            if not sign.verify_sign(params, WEPAY_APIKEY, request.REQUEST['sign']):
                 content = content.format('FAIL', 'NOT OK')
-                return HttpResponse(content, content_type="application/xml")
+                log('debug location xixihaha')
+                return HttpResponse(content, mimetype="application/xml")
         except:
-            log('debug location 0...')
             content = content.format('FAIL', 'NOT OK')
-            return HttpResponse(content, content_type="application/xml")
+            return HttpResponse(content, mimetype="application/xml")
 
         return view_func(request, *args, **kwargs)
 

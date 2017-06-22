@@ -46,3 +46,4 @@ venv
 .idea/
 media/
 logs/
+temp.xml
