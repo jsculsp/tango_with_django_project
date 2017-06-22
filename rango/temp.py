@@ -68,7 +68,7 @@ def fcoin_order_notify_wepay(request):
     if result_code != 'SUCCESS':
         content = content.format('FAIL', 'NOT OK')
         return HttpResponse(content, content_type='application/xml')
-    out_trade_no = request.POST['out_trade_no']
+    out_trade_no = request.params['out_trade_no']
     log('out_trade_no: ', out_trade_no)
     content = content.format('SUCCESS', 'OK')
     return HttpResponse(content, content_type='application/xml')
