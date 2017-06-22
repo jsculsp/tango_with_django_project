@@ -18,8 +18,7 @@ def verify_wechat_signature(view_func):
     """
     @wraps(view_func, assigned=available_attrs(view_func))
     def wrapped_view(request, *args, **kwargs):
-        plog(request)
-        plog(request.POST.keys())
+        plog(request.body)
         content = """
             <xml>
                 <return_code><![CDATA[{0}]]></return_code>
