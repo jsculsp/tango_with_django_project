@@ -82,6 +82,7 @@ def verify_alipay_signature(view_func):
     @wraps(view_func, assigned=available_attrs(view_func))
     def wrapped_view(request, *args, **kwargs):
         params = request.POST.dict()
+        plog(params)
         if verify_async_signature(**params):
             log('debug location 0...')
             return view_func(request, *args, **kwargs)
