@@ -33,8 +33,9 @@ def verify_wechat_signature(view_func):
         for child in root:
             params[child.tag] = child.text
         request.params = copy.deepcopy(params)
+        param_sign = params['sign']
         del params['sign']
-        if not sign.verify_sign(params, WEPAY_APIKEY, request.REQUEST['sign']):
+        if not sign.verify_sign(params, WEPAY_APIKEY, param_sign):
             content = content.format('FAIL', 'NOT OK')
             log('debug location xixihaha')
             return HttpResponse(content, mimetype="application/xml")
