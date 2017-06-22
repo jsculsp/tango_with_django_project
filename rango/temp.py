@@ -38,7 +38,7 @@ def verify_wechat_signature(view_func):
         if not sign.verify_sign(params, WEPAY_APIKEY, param_sign):
             content = content.format('FAIL', 'NOT OK')
             log('debug location xixihaha')
-            return HttpResponse(content, mimetype="application/xml")
+            return HttpResponse(content, content_type="application/xml")
         # except:
         #     content = content.format('FAIL', 'NOT OK')
         #     return HttpResponse(content, mimetype="application/xml")
