@@ -2,15 +2,27 @@ import copy
 import json
 from functools import wraps
 from xml.etree import cElementTree as ET
+import hashlib
 
 from django.utils.decorators import available_attrs
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
-from rango import sign
 from tango_with_django_project.utils.log import log, plog
 
 WEPAY_APIKEY = u"ffa02b3acd6c11e68cc600163e003d10"
+
+
+def get_md5_signature(**kwargs):
+    arguments = [(key, val) for (key, val) in kwargs.items() if val and key != u"sign"]
+    arguments.sort(key=lambda p: p[0])
+    data = u""
+    for (key, val) in arguments:
+        data += key + u"=" + val + u"&"
+    data += u"key=" + WEPAY_APIKEY
+    md5 = hashlib.md5()
+    md5.update(data.encode())
+    return md5.hexdigest().upper()
 
 
 def verify_wechat_signature(view_func):
@@ -34,8 +46,8 @@ def verify_wechat_signature(view_func):
             params[child.tag] = child.text
         request.params = copy.deepcopy(params)
         param_sign = params['sign']
-        del params['sign']
-        if not sign.verify_sign(params, WEPAY_APIKEY, param_sign):
+        local_sign = get_md5_signature(**params)
+        if local_sign != param_sign:
             content = content.format('FAIL', 'NOT OK')
             log('debug location xixihaha')
             return HttpResponse(content, content_type="application/xml")
