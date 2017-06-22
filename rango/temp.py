@@ -17,7 +17,7 @@ from tango_with_django_project.utils.log import log, plog
 WEPAY_APIKEY = u"ffa02b3acd6c11e68cc600163e003d10"
 with open('alipay_public.key') as f:
     verify_key = RSA.importKey(f.read())
-verifier = Signature_pkcs1_v1_5.new(None)
+verifier = Signature_pkcs1_v1_5.new(verify_key)
 
 
 def verify_async_signature(**kwargs):
