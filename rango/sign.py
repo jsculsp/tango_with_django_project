@@ -21,8 +21,7 @@ def make_source(params):
             params[k] = str(params[k])
         else:
             raise Exception('illegal params value type %s(%s).' %(k, type(params[k])))
-    keys = params.keys()
-    keys.sort()
+    keys = sorted(params.keys())
     list_params = map(lambda it: '%s=%s' % (it.encode('utf-8'), params[it]), keys)
     str_params = '&'.join(list_params)
     return str_params
