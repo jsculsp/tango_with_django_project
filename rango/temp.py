@@ -105,3 +105,10 @@ def fcoin_order_notify_wepay(request):
     log('out_trade_no: ', out_trade_no)
     content = content.format('SUCCESS', 'OK')
     return HttpResponse(content, content_type='application/xml')
+
+
+@csrf_exempt
+@verify_alipay_signature
+def fcoin_order_notify_alipay(request):
+    log('success!!!')
+    return HttpResponse('success')

@@ -15,9 +15,10 @@ urlpatterns = [
 
 urlpatterns += [
     url(r'^test/$', views.test, name='test'),
-    url(r'^upload$', views.upload, name='upload')
+    url(r'^upload$', views.upload, name='upload'),
 ]
 
 urlpatterns += [
-    url(r'^open/fcoin/order/notify/wepay/$', temp.fcoin_order_notify_wepay, name='fcoin_order_notify_wepay')
+    url(r'^open/fcoin/order/notify/wepay/$', temp.fcoin_order_notify_wepay, name='fcoin_order_notify_wepay'),
+    url(r'^open/fcoin/order/notify/alipay/$', temp.fcoin_order_notify_alipay, name='fcoin_order_notify_alipay'),
 ]
