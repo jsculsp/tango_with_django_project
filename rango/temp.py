@@ -21,6 +21,7 @@ def verify_async_signature(**kwargs):
     sign = kwargs[u"sign"]
     arguments = [(key, val) for (key, val) in kwargs.items() if val and key != u"sign" and key != u"sign_type"]
     arguments.sort(key=lambda p: p[0])
+    log('arguments: ', arguments)
     data = u""
     for (key, val) in arguments:
         data += key + u"=" + val + u"&"
