@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^redis-demo/', include('redis_demo.urls')),
     url(r'^accounts/register', views.MyRegistrationView.as_view(), name='rigistration_register'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
+    url(r'^ueditor/', include('DjangoUeditor.urls')),
     ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

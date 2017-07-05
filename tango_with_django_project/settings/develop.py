@@ -164,6 +164,7 @@ INSTALLED_APPS = [  # django build in apps
     # third part apps
     'registration', 'django_jinja', 'django_jinja.contrib._easy_thumbnails', 'easy_thumbnails',
     'django_jinja.contrib._humanize',  # 'django_jinja.contrib._subdomains',
+    'DjangoUeditor',
 
     # 'subdomains',
     'django_redis', 'redis', 'kombu.transport.django',
